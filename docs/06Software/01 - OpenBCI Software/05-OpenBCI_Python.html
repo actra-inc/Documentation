@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>06Software/01 - OpenBCI Software/05-OpenBCI_Python · OpenBCI Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# OpenBCI Python"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="06Software/01 - OpenBCI Software/05-OpenBCI_Python · OpenBCI Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/"/><meta property="og:description" content="# OpenBCI Python"/><meta property="og:image" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/Documentation-website-OpenBCI/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/Documentation-website-OpenBCI/js/scrollSpy.js"></script><link rel="stylesheet" href="/Documentation-website-OpenBCI/css/main.css"/><script src="/Documentation-website-OpenBCI/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/Documentation-website-OpenBCI/"><img class="logo" src="/Documentation-website-OpenBCI/img/favicon.ico" alt="OpenBCI Documentation"/><h2 class="headerTitleWithLogo">OpenBCI Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/Documentation-website-OpenBCI/docs/01GettingStarted/Welcome" target="_self">Documentation</a></li><li class=""><a href="/Documentation-website-OpenBCI/docs/doc4" target="_self">Shipping and other FAQ</a></li><li class=""><a href="/Documentation-website-OpenBCI/docs/test/test" target="_self">Example Projects</a></li><li class=""><a href="/Documentation-website-OpenBCI/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">06Software/01 - OpenBCI Software/05-OpenBCI_Python</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="openbci-python"></a><a href="#openbci-python" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OpenBCI Python</h1>
+<p>OpenBCI has a Python software library designed to work with OpenBCI hardware. To use it, download our OpenBCI Python github repository: <a href="https://github.com/OpenBCI/pyOpenBCI">https://github.com/OpenBCI/pyOpenBCI</a>. This Python code is meant to be used by people familiar with Python and programming in general. Its purpose is to allow for programmers to interface with OpenBCI technology directly, both to acquire data and to write programs that can use that data in a live setting, using Python.The OpenBCI-Python repo is still live but it is not longer being mantained by OpenBCI.</p>
+<p>Please direct any questions, suggestions and bug reports to the <a href="https://github.com/OpenBCI/pyOpenBCI">github repo</a> as well.</p>
+<h1><a class="anchor" aria-hidden="true" id="pyopenbci"></a><a href="#pyopenbci" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pyOpenBCI</h1>
+<p align="center" href="">
+  Provide a stable Python driver for all OpenBCI Biosensors
+</p>
+<p>This repo has been designed to be a more beginner friendly version of the <a href="https://github.com/OpenBCI/OpenBCI_Python">OpenBCI-Python</a> repo. If there is anything you think we should add please open an issue.</p>
+<p>Using this repo provides a building block for developing with Python. The goal for the Python library is to <strong><em>provide a stable Python driver for all OpenBCI Biosensors</em></strong>, that:</p>
+<ul>
+<li>Allows Python users to install one module and use any board they choose</li>
+<li>Provides examples of using Python to port data to other apps like lab streaming layer</li>
+<li>Performs the heavy lifting when extracting and transforming raw binary byte streams</li>
+<li>Provides a base for the beginner users to use Python to process their OpenBCI data</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="to-do"></a><a href="#to-do" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>To Do</h2>
+<ul>
+<li>Add Ganglion Aux Data</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="requirements"></a><a href="#requirements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requirements</h2>
+<ul>
+<li>Python 2.7 or 3.4+</li>
+<li>Currently the Cyton works on Windows, Linux, and MacOS.</li>
+<li>Ganglion works on Linux only (Linux VM with enabled Bluetooth works as well).</li>
+<li>The WiFi shield is known to have reliability issues across different computer configurations. Using it effectively requires advanced technical skills and programming knowledge. Note that the code avaiable here has not been tested accross all platforms.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<p>First, make sure you have the necessary dependencies.</p>
+<pre><code class="hljs css language-python">pip install numpy pyserial bitstring xmltodict requests
+</code></pre>
+<p>Linux users may need <code>bluepy</code> also.</p>
+<p>Then you can use pip to install the OpenBCI module.</p>
+<pre><code class="hljs css language-python">pip install pyOpenBCI
+</code></pre>
+<p>Once installed, try running the examples provided to make sure you can connect to your OpenBCI board.</p>
+<h2><a class="anchor" aria-hidden="true" id="important-notes"></a><a href="#important-notes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Important notes</h2>
+<p>Currently the Ganglion board can only be used with a Linux OS. The WiFi shield is known to have reliability issues across different computer configurations. Using it effectively requires advanced technical skills and programming knowledge. Note that the code avaiable here has not been tested accross all platforms.</p>
+<h3><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started</h3>
+<p>First you need to initialize your board with one of the following commands:</p>
+<h4><a class="anchor" aria-hidden="true" id="for-cyton-board"></a><a href="#for-cyton-board" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For Cyton board:</h4>
+<pre><code class="hljs css language-python"><span class="hljs-comment"># For Windows replace '*' with the port number</span>
+board = OpenBCICyton(port=<span class="hljs-string">'COM*'</span>)
+
+<span class="hljs-comment"># For MacOS and Linux replace '*' with the port number</span>
+board = OpenBCICyton(port=<span class="hljs-string">'/dev/ttyUSB*'</span>)
+</code></pre>
+<p>To find the COM port you are connected to you can use the OpenBCI GUI. Otherwise you can leave the port number as None, and the function find_port() will run and connect to the first Cyton Dongle it finds.</p>
+<h4><a class="anchor" aria-hidden="true" id="for-cyton-daisy"></a><a href="#for-cyton-daisy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For Cyton + Daisy:</h4>
+<pre><code class="hljs css language-python"><span class="hljs-comment"># For Windows replace '*' with the port number</span>
+board = OpenBCICyton(port=<span class="hljs-string">'COM*'</span>, daisy=<span class="hljs-literal">True</span>)
+
+<span class="hljs-comment"># For MacOS and Linux replace '*' with the port number</span>
+board = OpenBCICyton(port=<span class="hljs-string">'/dev/ttyUSB*'</span>, daisy=<span class="hljs-literal">True</span>)
+</code></pre>
+<p>To find the COM port you are connected to you can use the OpenBCI GUI. Otherwise you can leave the port number as None, and the function find_port() will run and connect to the first Cyton Dongle it finds.</p>
+<h4><a class="anchor" aria-hidden="true" id="for-ganglion"></a><a href="#for-ganglion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For Ganglion:</h4>
+<pre><code class="hljs css language-python"><span class="hljs-comment"># For Linux replace '*' with the mac address.</span>
+board = OpenBCIGanglion(mac=<span class="hljs-string">'*'</span>)
+</code></pre>
+<p>If you need to find the Ganglion mac address you can use an app like <a href="https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&amp;hl=en_US">nRF connect</a> to find the ganglion. Otherwise you can leave the mac address as None, and the function find_mac() will run (NOTE: You will need to run the script with sudo for this function to work).</p>
+<h4><a class="anchor" aria-hidden="true" id="for-wifi-shield"></a><a href="#for-wifi-shield" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For Wifi Shield:</h4>
+<pre><code class="hljs css language-python">board = OpenBCIWifi(shield_name=<span class="hljs-string">'OpenBCI-2254'</span>, sample_rate=<span class="hljs-number">200</span>)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="sending-commands"></a><a href="#sending-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sending commands</h3>
+<p>Once you initialize the board you can use the commands on the OpenBCI SDKs (<a href="https://docs.openbci.com/OpenBCI%20Software/06-OpenBCI_Ganglion_SDK">Ganglion</a>, <a href="https://docs.openbci.com/OpenBCI%20Software/04-OpenBCI_Cyton_SDK">Cyton</a>, <a href="https://docs.openbci.com/OpenBCI%20Software/08-OpenBCI_Wifi_SDK">Wifi Shield</a>) to send commands to the board using python (make sure your commands are strings).</p>
+<pre><code class="hljs css language-python"><span class="hljs-comment"># Write commands to the board</span>
+board.write_command(command)
+</code></pre>
+<p>Here is a table of the most common ones:</p>
+<table>
+<thead>
+<tr><th></th><th>Ganglion SDK</th><th>Cyton SDK</th><th>Cyton &amp; Daisy SDK (Additional Commands)</th><th>Wifi Shield SDK (Additional Commands)</th></tr>
+</thead>
+<tbody>
+<tr><td>Turn Channels OFF</td><td>1 2 3 4</td><td>1 2 3 4 5 6 7 8</td><td>q w e r t y u i</td><td></td></tr>
+<tr><td>Turn Channels ON</td><td></td><td>! @ # $ % ^ &amp; *</td><td>Q W E R T Y U I</td><td></td></tr>
+<tr><td>Connect to internal GND</td><td></td><td>0</td><td></td><td></td></tr>
+<tr><td>Enable Synthetic Square Wave</td><td>[</td><td>[</td><td></td><td></td></tr>
+<tr><td>Disable Synthetic Square Wave</td><td>]</td><td>]</td><td></td><td></td></tr>
+<tr><td>Connect to DC Signal</td><td></td><td>p</td><td></td><td></td></tr>
+<tr><td>Set Channels to Default</td><td></td><td>d</td><td></td><td></td></tr>
+<tr><td>Start Streaming Data</td><td>b</td><td>b</td><td></td><td></td></tr>
+<tr><td>Stop Streaming Data</td><td>s</td><td>s</td><td></td><td></td></tr>
+<tr><td>Soft Reset</td><td>v</td><td>v</td><td></td><td>;</td></tr>
+<tr><td>Enable Accelerometer</td><td>n</td><td></td><td></td><td></td></tr>
+<tr><td>Disable Accelerometer</td><td>N</td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="initializing-stream"></a><a href="#initializing-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initializing Stream</h3>
+<p>To start your stream you can use the following command with a callback function. You can look at the examples folder for some pre-written callback functions.</p>
+<pre><code class="hljs css language-python"><span class="hljs-comment"># Start stream</span>
+board.start_stream(callback)
+</code></pre>
+<p>The output of the start_stream function is the OpenBCISample on the callback function. The OpenBCISample object has the following attributes:</p>
+<ul>
+<li>packet_id = The ID of the incomming packet.</li>
+<li>channels_data = The raw EEG data of each channel. 4 for the Ganglion, 8 for the Cyton, and 16 for the Cyton + Daisy.</li>
+<li>aux_data = Accelerometer data.</li>
+</ul>
+<p>Because the channels_data and aux_data is the raw data in counts read by the board, we need to multiply the data by a scale factor. There is a specific scale factor for each board:</p>
+<h4><a class="anchor" aria-hidden="true" id="for-the-cyton-and-cyton-daisy-boards"></a><a href="#for-the-cyton-and-cyton-daisy-boards" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For the Cyton and Cyton + Daisy boards:</h4>
+<p>Multiply uVolts_per_count to convert the channels_data to uVolts.</p>
+<pre><code class="hljs css language-python">uVolts_per_count = (<span class="hljs-number">4500000</span>)/<span class="hljs-number">24</span>/(<span class="hljs-number">2</span>**<span class="hljs-number">23</span><span class="hljs-number">-1</span>) <span class="hljs-comment">#uV/count</span>
+</code></pre>
+<p>Multiply accel_G_per_count to convert the aux_data to G.</p>
+<pre><code class="hljs css language-python">accel_G_per_count = <span class="hljs-number">0.002</span> / (<span class="hljs-number">2</span>**<span class="hljs-number">4</span>) <span class="hljs-comment">#G/count</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="for-the-ganglion-board"></a><a href="#for-the-ganglion-board" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For the Ganglion Board</h4>
+<p>Multiply Volts_per_count to convert the channels_data to Volts.</p>
+<pre><code class="hljs css language-python">Volts_per_count = <span class="hljs-number">1.2</span> * <span class="hljs-number">8388607.0</span> * <span class="hljs-number">1.5</span> * <span class="hljs-number">51.0</span> <span class="hljs-comment">#V/count</span>
+</code></pre>
+<p>Multiply accel_G_per_count to convert the aux_data to G.</p>
+<pre><code class="hljs css language-python">accel_G_per_count = <span class="hljs-number">0.032</span> <span class="hljs-comment">#G/count</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="for-the-wifi-shield"></a><a href="#for-the-wifi-shield" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For the Wifi Shield</h4>
+<p>The Wifi Shield already outputs the data in Volts and the aux data in G.</p>
+<h3><a class="anchor" aria-hidden="true" id="example-print-raw-data"></a><a href="#example-print-raw-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example (Print Raw Data)</h3>
+<p>To test this example, use <code>py Examples\print_raw_example.py</code> or <code>python Examples\print_raw_example.py</code>.</p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> pyOpenBCI <span class="hljs-keyword">import</span> OpenBCICyton
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_raw</span><span class="hljs-params">(sample)</span>:</span>
+    print(sample.channels_data)
+
+board = OpenBCICyton(port=<span class="hljs-string">'COM5'</span>, daisy=<span class="hljs-literal">False</span>)
+
+board.start_stream(print_raw)
+
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="example-simple-lsl-streamer"></a><a href="#example-simple-lsl-streamer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example (Simple LSL Streamer)</h3>
+<p>To run this example, use <code>py Examples\lsl_example.py</code> or <code>python Examples\lsl_example.py</code>.</p>
+<pre><code class="hljs css language-python">
+<span class="hljs-keyword">from</span> pyOpenBCI <span class="hljs-keyword">import</span> OpenBCICyton
+<span class="hljs-keyword">from</span> pylsl <span class="hljs-keyword">import</span> StreamInfo, StreamOutlet
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+SCALE_FACTOR_EEG = (<span class="hljs-number">4500000</span>)/<span class="hljs-number">24</span>/(<span class="hljs-number">2</span>**<span class="hljs-number">23</span><span class="hljs-number">-1</span>) <span class="hljs-comment">#uV/count</span>
+SCALE_FACTOR_AUX = <span class="hljs-number">0.002</span> / (<span class="hljs-number">2</span>**<span class="hljs-number">4</span>)
+
+
+print(<span class="hljs-string">"Creating LSL stream for EEG. \nName: OpenBCIEEG\nID: OpenBCItestEEG\n"</span>)
+
+info_eeg = StreamInfo(<span class="hljs-string">'OpenBCIEEG'</span>, <span class="hljs-string">'EEG'</span>, <span class="hljs-number">8</span>, <span class="hljs-number">250</span>, <span class="hljs-string">'float32'</span>, <span class="hljs-string">'OpenBCItestEEG'</span>)
+
+print(<span class="hljs-string">"Creating LSL stream for AUX. \nName: OpenBCIAUX\nID: OpenBCItestEEG\n"</span>)
+
+info_aux = StreamInfo(<span class="hljs-string">'OpenBCIAUX'</span>, <span class="hljs-string">'AUX'</span>, <span class="hljs-number">3</span>, <span class="hljs-number">250</span>, <span class="hljs-string">'float32'</span>, <span class="hljs-string">'OpenBCItestAUX'</span>)
+
+outlet_eeg = StreamOutlet(info_eeg)
+outlet_aux = StreamOutlet(info_aux)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">lsl_streamers</span><span class="hljs-params">(sample)</span>:</span>
+    outlet_eeg.push_sample(np.array(sample.channels_data)*SCALE_FACTOR_EEG)
+    outlet_aux.push_sample(np.array(sample.aux_data)*SCALE_FACTOR_AUX)
+
+board = OpenBCICyton(port=<span class="hljs-string">'COM5'</span>, daisy=<span class="hljs-literal">False</span>)
+
+board.start_stream(lsl_streamers)
+
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="who-are-we"></a><a href="#who-are-we" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Who are we?</h3>
+<p>The founder of the OpenBCI Python repository is Jermey Frey. The Python driver is one of the most popular repositories and has the most contributors!</p>
+<p>The contributors to these repos are people using Python mainly for their data acquisition and analytics.</p>
+<h3><a class="anchor" aria-hidden="true" id="get-involved"></a><a href="#get-involved" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get involved</h3>
+<p>If you think you can help in any of the areas listed above (and we bet you can) or in any of the many areas that we haven't yet thought of (and here we're <em>sure</em> you can) then please check out our <a href="CONTRIBUTING.md">contributors' guidelines</a> and our <a href="ROADMAP.md">roadmap</a>.</p>
+<p>Please note that it's very important to us that we maintain a positive and supportive environment for everyone who wants to participate. When you join us we ask that you follow our <a href="CODE_OF_CONDUCT.md">code of conduct</a> in all interactions both on and offline.</p>
+<h3><a class="anchor" aria-hidden="true" id="contact-us"></a><a href="#contact-us" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contact us</h3>
+<p>If you want to report a problem or suggest an enhancement we'd love for you to <a href="../../issues">open an issue</a> at this github repository because then we can get right on it. But you can also contact [AJ][link_aj_keller] by email (pushtheworldllc AT gmail DOT com) or on <a href="https://twitter.com/aj-ptw">twitter</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="find-out-more"></a><a href="#find-out-more" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Find out more</h3>
+<p>You might be interested in:</p>
+<ul>
+<li>Purchase a <a href="https://shop.openbci.com/collections/frontpage/products/cyton-biosensing-board-8-channel">Cyton</a> | <a href="https://shop.openbci.com/collections/frontpage/products/pre-order-ganglion-board">Ganglion</a> | <a href="https://shop.openbci.com/collections/frontpage/products/wifi-shield?variant=44534009550">WiFi Shield</a> from <a href="http://www.openbci.com">OpenBCI</a></li>
+<li>Get taught how to use OpenBCI devices by [Push The World][link_ptw] BCI Consulting</li>
+</ul>
+<p>And of course, you'll want to know our:</p>
+<ul>
+<li><a href="CONTRIBUTING.md">Contributors' guidelines</a></li>
+<li><a href="ROADMAP.md">Roadmap</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="glossary"></a><a href="#glossary" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Glossary</h3>
+<p>OpenBCI boards are commonly referred to as <em>biosensors</em>. A biosensor converts biological data into digital data.</p>
+<p>The <a href="https://shop.openbci.com/collections/frontpage/products/pre-order-ganglion-board">Ganglion</a> has 4 channels, meaning the Ganglion can take four simultaneous voltage readings.</p>
+<p>The <a href="https://shop.openbci.com/collections/frontpage/products/cyton-biosensing-board-8-channel">Cyton</a> has 8 channels and <a href="https://shop.openbci.com/collections/frontpage/products/cyton-daisy-biosensing-boards-16-channel">Cyton with Daisy</a> has 16 channels.</p>
+<p>Generally speaking, the Cyton records at a high quality with less noise. Noise is anything that is not signal.</p>
+<h3><a class="anchor" aria-hidden="true" id="thank-you"></a><a href="#thank-you" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Thank you</h3>
+<p>Thank you so much (Danke schön! Merci beaucoup!) for visiting the project and we do hope that you'll join us on this amazing journey to make programming with OpenBCI fun and easy.</p>
+<h3><a class="anchor" aria-hidden="true" id="a-name-license-a-license"></a><a href="#a-name-license-a-license" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a name="license"></a> License:</h3>
+<p>MIT</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#to-do">To Do</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#installation">Installation</a></li><li><a href="#important-notes">Important notes</a><ul class="toc-headings"><li><a href="#getting-started">Getting Started</a></li><li><a href="#sending-commands">Sending commands</a></li><li><a href="#initializing-stream">Initializing Stream</a></li><li><a href="#example-print-raw-data">Example (Print Raw Data)</a></li><li><a href="#example-simple-lsl-streamer">Example (Simple LSL Streamer)</a></li><li><a href="#who-are-we">Who are we?</a></li><li><a href="#get-involved">Get involved</a></li><li><a href="#contact-us">Contact us</a></li><li><a href="#find-out-more">Find out more</a></li><li><a href="#glossary">Glossary</a></li><li><a href="#thank-you">Thank you</a></li><li><a href="#a-name-license-a-license">&lt;a name=&quot;license&quot;&gt;&lt;/a&gt; License:</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/Documentation-website-OpenBCI/" class="nav-home"><img src="/Documentation-website-OpenBCI/img/favicon.ico" alt="OpenBCI Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/Documentation-website-OpenBCI/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/Documentation-website-OpenBCI/docs/en/doc2.html">Guides (or other categories)</a><a href="/Documentation-website-OpenBCI/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/Documentation-website-OpenBCI/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/Documentation-website-OpenBCI/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/Documentation-website-OpenBCI/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 OpenBCI</section></footer></div></body></html>

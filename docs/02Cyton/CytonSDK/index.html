@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Cyton Board SDK · OpenBCI Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="**[Suggest an edit to this page](https://github.com/OpenBCI/Docs/edit/master/OpenBCI%20Software/04-OpenBCI_Cyton_SDK.md)**"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Cyton Board SDK · OpenBCI Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/"/><meta property="og:description" content="**[Suggest an edit to this page](https://github.com/OpenBCI/Docs/edit/master/OpenBCI%20Software/04-OpenBCI_Cyton_SDK.md)**"/><meta property="og:image" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/Documentation-website-OpenBCI/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/Documentation-website-OpenBCI/js/scrollSpy.js"></script><link rel="stylesheet" href="/Documentation-website-OpenBCI/css/main.css"/><script src="/Documentation-website-OpenBCI/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/Documentation-website-OpenBCI/"><img class="logo" src="/Documentation-website-OpenBCI/img/favicon.ico" alt="OpenBCI Documentation"/><h2 class="headerTitleWithLogo">OpenBCI Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/Documentation-website-OpenBCI/docs/01GettingStarted/Welcome" target="_self">Documentation</a></li><li class=""><a href="/Documentation-website-OpenBCI/docs/doc4" target="_self">Shipping and other FAQ</a></li><li class=""><a href="/Documentation-website-OpenBCI/docs/test/test" target="_self">Example Projects</a></li><li class=""><a href="/Documentation-website-OpenBCI/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Cyton Board</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started with OpenBCI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/Welcome">Welcome to the OpenBCI Community</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/CytonGS">Cyton Getting Started Guide</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/GanglionGS">Ganglion Getting Started Guide</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/WiFiGS">WiFi Shield Getting Started Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Cyton Board<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonLanding">Cyton Board</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSpecs">Cyton Specs</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonDataFormat">Cyton Data Format</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSDK">Cyton Board SDK</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonProgram">Cyton Board Programming Tutorial</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonRadios">Cyton Radios Programming Tutorial</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonExternal">External Trigger on OpenBCI Cyton Board</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSDCard">Using SD Card with OpenBCI</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Compatible Software<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/doc3">This is document number 3</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Cyton Board SDK</h1></header><article><div><span><p><strong><a href="https://github.com/OpenBCI/Docs/edit/master/OpenBCI%20Software/04-OpenBCI_Cyton_SDK.md">Suggest an edit to this page</a></strong></p>
+<p>The OpenBCI Cyton boards communicate using a byte string (mostly ASCII) command protocol. This Doc covers command use for the OpenBCI Cyton and 8bit boards. Some of the commands are board specific, where noted. Further this Doc covers the commands needed in order to alter the radio system. There have been several iterations of the firmware, the 8bit board runs <code>v0</code>, while the Cyton runs <code>v1</code> and Boards shipped as of Fall 2016 run <code>v2.0.0</code>. <code>v3.0.0</code> will begin shipping with boards in August of 2017.</p>
+<h2><a class="anchor" aria-hidden="true" id="cyton-command-protocol-overview"></a><a href="#cyton-command-protocol-overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cyton Command Protocol Overview</h2>
+<p>Cyton boards have two powerful microcontrollers on board, and come pre-programmed with the firmware. The RFduino radio link uses the Nordic Gazelle stack and library. The Board mounted RFduino is configured as a DEVICE. The microcontroller (PIC32MX250F128B or ATmega328P) has been programmed with firmware that interfaces between the ADS1299 (Analog Front End), LIS3DH (Accelerometer), micro SD (if installed), and RFduino (Radio module). The user, or application, controls the board by sending commands over wireless serial connection. You should have received a Dongle with the OpenBCI board. The Dongle has an RFduino running the Gazelle library configured as a HOST, and interfaces your computer through a Virtual Com Port (FTDI).</p>
+<p>On startup, the OpenBCI 8bit board (<code>v0</code>) sends the following text over the radio:</p>
+<pre><code class="hljs">OpenBCI V3 8bit Board
+Setting ADS1299 Channel Values
+ADS1299 Device ID: 0x3E
+LIS3DH Device ID: 0x33
+$$$
+</code></pre>
+<p>the OpenBCI Cyton board with firmware <code>v1</code> sends the following text over the radio:</p>
+<pre><code class="hljs">OpenBCI V3 16 channel
+ADS1299 Device ID: 0x3E
+LIS3DH Device ID: 0x33
+$$$
+</code></pre>
+<p>the OpenBCI Cyton board with firmware <code>v2.0.0</code> sends the following text over the radio:</p>
+<pre><code class="hljs">OpenBCI V3 8-16 channel
+ADS1299 Device ID: 0x3E
+LIS3DH Device ID: 0x33
+Firmware: v2.0.0
+$$$
+</code></pre>
+<p>Device ID info is useful for general board health confirmation. The $$$ is clear indication to the controlling application that the message is complete and the Cyton board is ready to receive commands. As of <code>v2.0.0</code>, there is an additional printout to indicate the exact firmware version.</p>
+<p>Pay attention to timing when sending commands when using <code>v0</code> and <code>v1</code> firmware. There must be some delay before and after sending a command character from the PC (controlling program or user running a terminal). As of <code>v2.0.0</code>, this is no longer the case, send as fast as you can!</p>
+<h2><a class="anchor" aria-hidden="true" id="command-set"></a><a href="#command-set" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command Set</h2>
+<h3><a class="anchor" aria-hidden="true" id="turn-channels-off"></a><a href="#turn-channels-off" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Turn Channels OFF</h3>
+<p><strong>1 2 3 4 5 6 7 8</strong>  <br>
+These ASCII characters turn the respective channels [1-8] off. The channel will read 0.00 when off during streamData mode. These commands work in and out of streamData mode.</p>
+<p><strong>returns</strong> none, there is no confirmation.</p>
+<h3><a class="anchor" aria-hidden="true" id="turn-channels-on"></a><a href="#turn-channels-on" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Turn Channels ON</h3>
+<p>**! @ # $ % ^ &amp;  * **<br>
+These ASCII characters turn the respective channels [1-8] on. The channel will read ADC output values during streamData mode. These commands work in and out of streamData mode.</p>
+<p><strong>returns</strong> none, there is no confirmation.</p>
+<h3><a class="anchor" aria-hidden="true" id="test-signal-control-commands"></a><a href="#test-signal-control-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test Signal Control Commands</h3>
+<p><strong>0 - = p [ ]</strong>  <br>
+Turn <strong>all</strong> available channels on, and connect them to internal test signal. These are useful for self test and calibration. For example, you can measure the internal noise by sending <strong>0</strong> which connects all inputs to an internal GND. If streaming, the stream will be stopped, the proper registers set on the ADS1299, and the stream will be resumed.</p>
+<ul>
+<li><p><strong>0</strong>  Connect to internal GND (VDD - VSS)</p></li>
+<li><p><strong>-</strong>  Connect to test signal 1xAmplitude, slow pulse</p></li>
+<li><p><strong>=</strong>  Connect to test signal 1xAmplitude, fast pulse</p></li>
+<li><p><strong>p</strong>  Connect to DC signal</p></li>
+<li><p><strong>[</strong>  Connect to test signal 2xAmplitude, slow pulse</p></li>
+<li><p><strong>]</strong>  Connect to test signal 2xAmplitude, fast pulse</p>
+<p>**Note: Not all possible internal test connections are implemented here **</p></li>
+</ul>
+<p><strong>returns</strong> If not streaming, returns <code>Success: Configured internal test signal.$$$</code>, if streaming, there is no confirmation.</p>
+<h3><a class="anchor" aria-hidden="true" id="channel-setting-commands"></a><a href="#channel-setting-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Channel Setting Commands</h3>
+<p>** x (CHANNEL, POWER_DOWN, GAIN_SET, INPUT_TYPE_SET, BIAS_SET, SRB2_SET, SRB1_SET) X **<br>
+Channel Settings commands have six parameters for each ADS channel. To access Channel Settings, first send <strong>x</strong>. The OpenBCI board will then expect the next 7 bytes to be channel settings specific commands. The first byte is the channel number. (If you have the Daisy Module, you can select up to 16 channels to set). The following six ASCII characters are accepted as parameters to set. Lastly, sending <strong>X</strong> will latch the settings to the ADS channel.</p>
+<p><strong>CHANNEL</strong></p>
+<ul>
+<li><strong>1 2 3 4 5 6 7 8</strong>  for single board channel select</li>
+<li><strong>Q W E R T Y U I</strong>  for selecting channels on the Daisy Module</li>
+</ul>
+<p><strong>POWER_DOWN</strong></p>
+<ul>
+<li>0 = ON (default)</li>
+<li>1 = OFF</li>
+</ul>
+<p><strong>GAIN_SET</strong></p>
+<ul>
+<li>0 = Gain 1</li>
+<li>1 = Gain 2</li>
+<li>2 = Gain 4</li>
+<li>3 = Gain 6</li>
+<li>4 = Gain 8</li>
+<li>5 = Gain 12</li>
+<li>6 = Gain 24   (default)</li>
+</ul>
+<p><strong>INPUT_TYPE_SET</strong>  <br>
+Select the ADC channel input source</p>
+<ul>
+<li>0        ADSINPUT_NORMAL      (default)</li>
+<li>1        ADSINPUT_SHORTED</li>
+<li>2        ADSINPUT_BIAS_MEAS</li>
+<li>3        ADSINPUT_MVDD</li>
+<li>4        ADSINPUT_TEMP</li>
+<li>5        ADSINPUT_TESTSIG</li>
+<li>6        ADSINPUT_BIAS_DRP</li>
+<li>7        ADSINPUT_BIAS_DRN</li>
+</ul>
+<p><strong>BIAS_SET</strong>  <br>
+Select to include the channel input in BIAS generation.</p>
+<ul>
+<li>0 = Remove form BIAS</li>
+<li>1 = Include in BIAS  (default)</li>
+</ul>
+<p><strong>SRB2_SET</strong>  <br>
+Select to connect this channel's P input to the SRB2 pin. This closes a switch between P input and SRB2 for the given channel, and allows the P input also remain connected to the ADC.</p>
+<ul>
+<li>0 = Disconnect this input from SRB2</li>
+<li>1 = Connect this input to SRB2  (default)</li>
+</ul>
+<p><strong>SRB1_SET</strong>  <br>
+Select to connect all channels' N inputs to SRB1. This effects all pins, and disconnects all N inputs from the ADC.</p>
+<ul>
+<li>0 = Disconnect all N inputs from SRB1 (default)</li>
+<li>1 = Connect all N inputs to SRB1</li>
+</ul>
+<p><strong>EXAMPLE</strong></p>
+<p>User sends <strong>x  3  0  2  0  0  0  0  X</strong></p>
+<p>'x' enters Channel Settings mode. Channel 3 is set up to be powered up, with gain of 2, normal input, removed from BIAS generation, removed from SRB2, removed from SRB1. The final 'X' latches the settings to the ADS1299 channel settings register.</p>
+<p>For firmware <code>v0</code> and <code>v1</code> it is required that you allow a time delay (&gt;10mS) when setting the channel and parameters. As of <code>v2.0.0</code>, you may stack multiple channel settings together such as:</p>
+<p><strong>EXAMPLE</strong></p>
+<p>User sends <strong>x1020000Xx2020000Xx3020000X</strong></p>
+<p>This will set the first three channels.</p>
+<p><strong>returns</strong></p>
+<p>On success:</p>
+<ul>
+<li>If streaming, no confirmation of success. Note: WiFi Shields will always get a response, even if streaming.</li>
+<li>If not streaming, returns <code>Success: Channel set for 3$$$</code>, where 3 is the channel that was requested to be set.</li>
+</ul>
+<p>On failure:</p>
+<ul>
+<li>If not streaming, NOTE: WiFi shield always sends the following responses without <code>$$$</code>
+<ul>
+<li>Not enough characters received, <code>Failure: too few chars$$$</code> (<strong>example</strong> user sends x102000X)</li>
+<li>9th character is not the upper case 'X', <code>Failure: 9th char not X$$$</code> (<strong>example</strong> user sends x1020000V)</li>
+<li>Too many characters or some other issue, <code>Failure: Err: too many chars$$$</code></li>
+</ul></li>
+<li>If not all commands are not received within 1 second, <code>Timeout processing multi byte message - please send all commands at once as of v2$$$</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="default-channel-settings"></a><a href="#default-channel-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Default Channel Settings</h3>
+<p><strong>d</strong> To set all channels to default</p>
+<p><strong>returns</strong> if not streaming, <code>updating channel settings to default$$$</code></p>
+<p><strong>D</strong> To get a report of the default settings send.</p>
+<p><strong>returns</strong> When you query the default settings, expect to get 6 ASCII characters followed by <strong>$$$</strong></p>
+<p><em>Note: Users can change the default channel settings in the initialization function inside the OpenBCI library. Requires re-programming the board</em></p>
+<h3><a class="anchor" aria-hidden="true" id="leadoff-impedance-commands"></a><a href="#leadoff-impedance-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LeadOff Impedance Commands</h3>
+<p><strong>z (CHANNEL, PCHAN, NCHAN) Z</strong>  <br>
+This works similar to the Channel Settings commands. For firmware <code>v0</code> and <code>v1</code> care must be taken to delay between sending characters, as of <code>v2.0.0</code>, you may send as fast as possible in a byte stream. Impedance settings have two parameters for each ADS channel. Impedance is measurable by applying a small 31.5Hz AC signal to the given channel.</p>
+<ul>
+<li>0 = Test Signal Not Applied (default)</li>
+<li>1 = Test Signal Applied</li>
+</ul>
+<p><strong>EXAMPLE</strong></p>
+<p>User sends <strong>z  4  1  0  Z</strong></p>
+<p>'z' enters Impedance Settings mode. Channel 4 is set up to measure impedance on the P input. The final 'Z' latches the settings to the ADS registers.</p>
+<p><strong>returns</strong></p>
+<p>On success:</p>
+<ul>
+<li>If streaming, no confirmation of success. Note: WiFi Shields will always get a response, even if streaming.</li>
+<li>If not streaming, returns <code>Success: Lead off set for 4$$$</code>, where 4 is the channel that was requested to be set.</li>
+</ul>
+<p>On failure:</p>
+<ul>
+<li>If not streaming, NOTE: WiFi shield always sends the following responses without <code>$$$</code>
+<ul>
+<li>Not enough characters received, <code>Failure: too few chars$$$</code> (<strong>example</strong> user sends x102000X)</li>
+<li>5th character is not the upper case 'X', <code>Failure: 5th char not Z$$$</code> (<strong>example</strong> user sends x1020000V)</li>
+<li>Too many characters or some other issue, <code>Failure: Err: too many chars$$$</code></li>
+</ul></li>
+<li>If not all commands are not received within 1 second, <code>Timeout processing multi byte message - please send all commands at once as of v2$$$</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="sd-card-commands"></a><a href="#sd-card-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SD card Commands</h3>
+<p><strong>A S F G H J K L</strong>  <br>
+Send to initiate SD card data logging for specified time</p>
+<ul>
+<li>A    =      5MIN</li>
+<li>S    =      15MIN</li>
+<li>F    =      30MIN</li>
+<li>G    =      1HR</li>
+<li>H    =      2HR</li>
+<li>J    =      4HR</li>
+<li>K    =      12HR</li>
+<li>L    =      24HR</li>
+<li>a    =      about 14 seconds for testing</li>
+</ul>
+<p><strong>j</strong>  <br>
+Stop logging data and close SD file</p>
+<h3><a class="anchor" aria-hidden="true" id="stream-data-commands"></a><a href="#stream-data-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream Data Commands</h3>
+<p><strong>b</strong>  <br>
+Start streaming data</p>
+<p><strong>returns</strong> none, there is no confirmation. NOTE: when command from WiFi shield, confirmation is <code>Stream started</code>.</p>
+<p><strong>s</strong>  <br>
+Stop Streaming data</p>
+<p><strong>returns</strong> none, there is no confirmation. NOTE: when command from WiFi shield, confirmation is <code>Stream stopped</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="miscellaneous"></a><a href="#miscellaneous" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Miscellaneous</h3>
+<p><strong>?</strong>  <br>
+Query register settings</p>
+<p><strong>returns</strong> Read and report all register settings for the ADS1299 and the LIS3DH. Expect to get a verbose serial output from the OpenBCI Board, followed by <strong>$$$</strong></p>
+<p><strong>v</strong></p>
+<p>Soft reset for the Board peripherals<br>
+The 8bit board gets a reset signal from the Dongle any time an application opens the serial port, just like a arduino. The Cyton board doesn't have this feature. So, if you want to soft-reset the Cyton board (<code>v1</code> or <code>v2.0.0</code>), send it a <strong>v</strong>.</p>
+<p><strong>returns</strong>
+OpenBCI V3 8-16 channel
+ADS1299 Device ID: 0x3E
+LIS3DH Device ID: 0x33
+Firmware: v3.1.1
+$$$</p>
+<h2><a class="anchor" aria-hidden="true" id="16-channel-commands"></a><a href="#16-channel-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16 Channel Commands</h2>
+<p>Currently, the Daisy Module is implemented only on the Cyton board. The Daisy Module adds 8 more input channels for a total of 16. These are the commands specific to controlling the ADS1299 on the Daisy Module.</p>
+<h3><a class="anchor" aria-hidden="true" id="turn-channels-off-1"></a><a href="#turn-channels-off-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Turn Channels OFF</h3>
+<p><strong>q w e r t y u i</strong>  <br>
+These ASCII characters turn the respective channels [9-16] off. The channel will read 0.00 during streamData mode. These commands work in and out of streamData mode.</p>
+<p><strong>returns</strong> none, there is no confirmation.</p>
+<h3><a class="anchor" aria-hidden="true" id="turn-channels-on-1"></a><a href="#turn-channels-on-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Turn Channels ON</h3>
+<p><strong>Q W E R T Y U I</strong>  <br>
+These ASCII characters turn the respective channels [9-16] on. The channel will contain ADC values during streamData mode. These commands work in and out of streamData mode.</p>
+<p><strong>returns</strong> none, there is no confirmation.</p>
+<h3><a class="anchor" aria-hidden="true" id="select-maximum-channel-number"></a><a href="#select-maximum-channel-number" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Select maximum channel number</h3>
+<p><strong>c</strong></p>
+<p>Use 8 channels only. If the Daisy Module is attached, it will be unattached, and access to only channels 1-8 are available.</p>
+<p><strong>returns</strong></p>
+<ul>
+<li>If daisy is not present, no confirmation is sent because the board is already in the 8 channel mode. NOTE: If command from WiFi Shield then <code>No daisy to remove</code> is returned.</li>
+<li>If a daisy is present, returns <code>daisy removed$$$</code>.</li>
+</ul>
+<p><strong>C</strong>
+Use 16 channels.</p>
+<p><strong>returns</strong></p>
+<ul>
+<li>If daisy already attached, returns <code>16$$$</code>.</li>
+<li>If the daisy is not currently attached and is <strong>not</strong> able to be attached, then <code>no daisy to attach!8$$$</code> is returned.</li>
+<li>If the daisy is not currently attached and is able to be attached, then <code>daisy attached16$$$</code> is returned.</li>
+</ul>
+<p><em>Note: On reset, the OpenBCI Cyton board will 'sniff' for the Daisy Module, and if it is present, it will default to 16 channel capability.</em></p>
+<h2><a class="anchor" aria-hidden="true" id="firmware-v200-new-commands"></a><a href="#firmware-v200-new-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Firmware v2.0.0 New Commands</h2>
+<p>Firmware v2.0.0 was the first overhaul from <a href="www.pushtheworld.us">Push The World</a> which stabilized the core code and added several key new features to improve the user experience. As of firmware version <code>v2.0.0</code>, a set of commands has been implemented to change the radio system and improve over-the-air programming of the main Cyton board.
+In order to use the commands you must keep to the form of <strong>key</strong>-<strong>code</strong>-<strong>(payload)</strong> where <strong>key</strong> is<code>0xF0</code>, <strong>code</strong> is defined below and <strong>payload</strong> is optional and dependent on the <strong>code</strong>. For example, to get system status send <code>0xF0</code> then send <code>0x07</code>.</p>
+<p>If the RFDuinos cannot speak to each other, you will see a <code>Failure: Communications timeout - Device failed to poll host</code> which means the Device RFDuino (on the Cyton) has stopped polling the Host RFDuino on the Dongle.</p>
+<h3><a class="anchor" aria-hidden="true" id="time-stamping"></a><a href="#time-stamping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Time Stamping</h3>
+<p><strong>&lt;</strong></p>
+<p>Start time stamping and resynchronize command. When the Driver sends a <strong>&lt;</strong>, the Host radio will respond with a <strong>,</strong>. Since the Host cannot send packets to the Device ad hoc, it may be helpful to know when the Host was actually able to send the command. If the Board is not streaming, then expect a response of <code>Time stamp ON$$$</code>. If the board is streaming, then you will get a response in the data stream when the Driver receives a data packet with a different <strong>stop byte</strong> as described in the document titled <a href="http://docs.openbci.com/Hardware/03-Cyton_Data_Format">OpenBCI Streaming Data Format</a>.</p>
+<p><strong>returns</strong> if not streaming, <code>Time stamp ON$$$</code>, if streaming then no confirmation</p>
+<p><strong>&gt;</strong></p>
+<p>Stops time stamping. If the Board is not streaming, then expect a response of <code>Time stamp OFF$$$</code>; however if the board is streaming, then you will get a response in a different <strong>stop byte</strong> as described in the document titled <a href="http://docs.openbci.com/Hardware/03-Cyton_Data_Format">OpenBCI Streaming Data Format</a>.</p>
+<p><strong>returns</strong> if not streaming, <code>Time stamp OFF$$$</code>, if streaming then no confirmation</p>
+<h3><a class="anchor" aria-hidden="true" id="get-radio-channel-number"></a><a href="#get-radio-channel-number" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Radio Channel Number</h3>
+<p><strong>0x00</strong></p>
+<p>Returns either success or failure. If you get a failure, it will give you the host channel number and a failure message. If success it gives you both host and device channel numbers and a success message. Channel numbers can only be 1-25. The byte before EOT ($$$) will contain the channel number value in HEX.</p>
+<p><strong>EXAMPLE</strong>
+User sends <strong>0xF0</strong> <strong>0x00</strong> to get the system to channel number</p>
+<h3><a class="anchor" aria-hidden="true" id="set-radio-system-channel-number"></a><a href="#set-radio-system-channel-number" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Radio System Channel Number</h3>
+<p><strong>0x01</strong></p>
+<p>If your radio system is up and talking, i.e. You sent <code>0xF007</code> and got a Success response signifying the Device and Host are on the same channel number.</p>
+<p>Returns either success or failure. On failure it will ask you to verify the channel number and print a failure message. On success, it gives you both host and device channel numbers and a success message. Channel numbers can only be 1-25. The byte before EOT ($$$) will contain the channel number value in HEX.</p>
+<p><strong>EXAMPLE</strong>
+User sends <strong>0xF0</strong> <strong>0x01</strong> <strong>0x07</strong> to set the system to channel 7</p>
+<h3><a class="anchor" aria-hidden="true" id="set-host-radio-channel-override"></a><a href="#set-host-radio-channel-override" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Host Radio Channel Override</h3>
+<p><strong>0x02</strong></p>
+<p>If your radio system is not up and talking, i.e. You sent <code>0xF007</code> and got a Failure response signifying the Device and Host are not on the same channel number OR your Cyton does not have power. If your Cyton is powered on you can cycle the Host through all possible 25 channels in an attempt to realign your Host and Device on the same radio channel.</p>
+<p>Returns either success or failure. On failure it will ask you to verify the channel number and print a failure message. If success it sends &quot;Host Override&quot; followed by the channel number. Channel numbers can only be 1-25. The byte before EOT ($$$) will contain the channel number value in HEX.</p>
+<p><strong>EXAMPLE</strong>
+User sends <strong>0xF0</strong> <strong>0x02</strong> <strong>0x01</strong> force the <strong>only</strong> the Host to channel 1</p>
+<h3><a class="anchor" aria-hidden="true" id="radio-get-poll-time"></a><a href="#radio-get-poll-time" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Radio Get Poll Time</h3>
+<p><strong>0x03</strong></p>
+<p>The poll time is a critical factor in over the air uploads. There is a direct correlation between poll time, CPU performance, and successful over the air uploads of the Pic32 software. If you are continuously getting failures, check out your poll time and increase if needed. If you have a good computer, you can try lowering the poll time to speed up your over the air uploads!</p>
+<p>Returns success followed by the poll time in HEX.</p>
+<p><strong>EXAMPLE</strong>
+User sends <strong>0xF0</strong> <strong>0x03</strong> to get the system to poll time number</p>
+<h3><a class="anchor" aria-hidden="true" id="radio-set-poll-time"></a><a href="#radio-set-poll-time" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Radio Set Poll Time</h3>
+<p><strong>0x04</strong></p>
+<p>The poll time is a critical factor in over the air uploads. There is a direct correlation between poll time, CPU performance, and successful over the air uploads of the Pic32 software. If you are continuously getting failures, check out your poll time and increase if needed. If you have a good computer, you can try lowering the poll time to speed up your over the air uploads!</p>
+<p>Returns either success or failure. On failure it will send a &quot;Communications Timeout&quot; message. On success it sends success followed by the poll time in HEX. Values sent must be from 0-255 and must be sent in HEX. Defaults to 80ms.</p>
+<p><strong>EXAMPLE</strong>
+User sends <strong>0xF0</strong> <strong>0x04</strong> <strong>0x40</strong> which sets the poll time to 64ms.</p>
+<h3><a class="anchor" aria-hidden="true" id="radio-set-host-to-driver-baud-rate-to-default"></a><a href="#radio-set-host-to-driver-baud-rate-to-default" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Radio Set HOST to Driver Baud Rate to Default</h3>
+<p><strong>0x05</strong></p>
+<p>Tells the Host RFDuino to send UART Serial data out at <code>115200</code> to the FTDI Virtual Serial Port.</p>
+<p>Returns success and sends the baud rate in ASCII <code>115200</code>.</p>
+<p><strong>EXAMPLE</strong>
+User sends <strong>0xF0</strong> <strong>0x05</strong> to set the baud rate to <code>115200</code></p>
+<h3><a class="anchor" aria-hidden="true" id="radio-set-host-to-driver-baud-rate-to-high-speed-mode"></a><a href="#radio-set-host-to-driver-baud-rate-to-high-speed-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Radio Set HOST to Driver Baud Rate to High-Speed mode</h3>
+<p><strong>0x06</strong></p>
+<p>Tells the Host RFDuino to send UART Serial data out at <code>230400</code> to the FTDI Virtual Serial Port. Note this does not help increase sample rate of the system, but it does help prevent dropped packets by allowing the computer to pull data off the serial-port faster because the data arrives so much faster to the FTDI virtual serial port.</p>
+<p>Returns success and sends the baud rate in ASCII <code>230400</code>.</p>
+<p><strong>EXAMPLE</strong>
+User sends <strong>0xF0</strong> <strong>0x06</strong> to set the baud rate to <code>230400</code></p>
+<h3><a class="anchor" aria-hidden="true" id="radio-set-host-to-driver-baud-rate-to-hyper-speed-mode"></a><a href="#radio-set-host-to-driver-baud-rate-to-hyper-speed-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Radio Set HOST to Driver Baud Rate to Hyper-Speed mode</h3>
+<p><strong>0x0A</strong></p>
+<p>Tells the Host RFDuino to send UART Serial data out at <code>921600</code> to the FTDI Virtual Serial Port. Note this does not help increase sample rate of the system, but it does help prevent dropped packets by allowing the computer to pull data off the serial-port faster because the data arrives so much faster to the FTDI virtual serial port.</p>
+<p>Returns success and sends the baud rate in ASCII <code>921600</code>.</p>
+<p><strong>EXAMPLE</strong>
+User sends <strong>0xF0</strong> <strong>0x0A</strong> to set the baud rate to <code>921600</code></p>
+<h3><a class="anchor" aria-hidden="true" id="radio-system-status"></a><a href="#radio-system-status" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Radio System Status</h3>
+<p><strong>0x07</strong></p>
+<p>Get a health status check of your RFDuino to RFDuino communications.</p>
+<p>Returns success or failure. On failure it will send a &quot;Failure: System is down$$$&quot; message. On success, it will send a &quot;Success: System is up$$$&quot; message.</p>
+<p><strong>EXAMPLE</strong>
+User sends <strong>0xF0</strong> <strong>0x07</strong> to get status</p>
+<h2><a class="anchor" aria-hidden="true" id="firmware-v300-new-commands"></a><a href="#firmware-v300-new-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Firmware v3.0.0 New Commands</h2>
+<p>Supporting all v1.0.0 and v2.0.0, the v3.0.0 firmware extends the OpenBCI system to allow for a variable sample rate and analog or digital input readings!</p>
+<h3><a class="anchor" aria-hidden="true" id="sample-rate"></a><a href="#sample-rate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Rate</h3>
+<p><strong>~(COMMAND)</strong>  <br>
+This works similar to the Channel Settings commands, however, there is no latching character. Power cycling the OpenBCI board will cause the sample rate to reset back to default of 250Hz.</p>
+<p><strong>IMPORTANT!</strong> The Cyton with USB Dongle cannot and will not stream data over 250SPS. Plug in the <a href="https://shop.openbci.com/collections/frontpage/products/wifi-shield?variant=44534009550">WiFi Shield</a> to get speeds over 250SPS streaming. You may still write to an SD card though, the firmware will not send EEG data over the Bluetooth radios.</p>
+<p><strong>COMMAND</strong></p>
+<ul>
+<li>0 = 16000 Hz</li>
+<li>1 = 8000 Hz</li>
+<li>2 = 4000 Hz</li>
+<li>3 = 2000 Hz</li>
+<li>4 = 1000 Hz</li>
+<li>5 = 500 Hz</li>
+<li>6 = 250 Hz</li>
+<li>~ = Get current sample rate</li>
+</ul>
+<p><strong>EXAMPLE</strong></p>
+<p>First, user sends <strong>~~</strong></p>
+<p><strong>returns</strong> <code>Sample rate is 250Hz$$$</code></p>
+<p>Then, user sends <strong>~5</strong></p>
+<p><strong>returns</strong> <code>Sample rate set to 500Hz$$$</code></p>
+<p>NOTE: if not all commands are not received within 1 second, <code>Timeout processing multi byte message - please send all commands at once as of v2$$$</code></p>
+<h3><a class="anchor" aria-hidden="true" id="board-mode"></a><a href="#board-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Board Mode</h3>
+<p><strong>/(COMMAND)</strong>  <br>
+This works similar to the sample rate. Power cycling the OpenBCI board will cause the board mode to return to default mode with accelerometer in the aux bytes.</p>
+<p><strong>COMMAND</strong></p>
+<ul>
+<li>0 = Default mode - Sends accelerometer data in aux bytes</li>
+<li>1 = Debug mode - Sends serial output over the external serial port which is helpful for debugging.</li>
+<li>2 = Analog mode - Reads from analog pins A5(D11), A6(D12) and if no wifi shield is present, then A7(D13) as well.</li>
+<li>3 = Digital mode - Reads from analog pins D11, D12 and D17. If no wifi present then also D13 and D18.</li>
+<li>4 = Marker mode - Turns accel off and injects markers into the stream by sending _<code>X_ where</code>X` is any char to add to the first AUX byte.</li>
+<li>/ = Get current board mode</li>
+</ul>
+<p><strong>EXAMPLE</strong></p>
+<p>First, user sends <strong>//</strong></p>
+<p><strong>returns</strong> <code>Board mode is default$$$</code></p>
+<p>Then, user sends <strong>/2</strong></p>
+<p><strong>returns</strong> <code>Board mode set to analog$$$</code></p>
+<p>NOTE: if not all commands are not received within 1 second, <code>Timeout processing multi byte message - please send all commands at once as of v2$$$</code></p>
+<h3><a class="anchor" aria-hidden="true" id="wifi-shield-commands"></a><a href="#wifi-shield-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wifi Shield Commands</h3>
+<p><strong>{</strong></p>
+<p>Try to attach a Wifi Shield</p>
+<p><strong>returns</strong> Success will send response <code>Success: Wifi attached$$$</code> on failure response will be <code>Failure: Wifi not attached$$$</code>. Failure happens when the wifi shield is not powered up or the wifi shield does not power correctly. Try power cycling the system if failure continues.</p>
+<p><strong>}</strong></p>
+<p>Remove an attached wifi shield.</p>
+<p><strong>returns</strong> Success will send response <code>Success: Wifi removed$$$</code> on failure response will be <code>Failure: Wifi not removed$$$</code>. Failure occurs when no wifi shield is present to remove.</p>
+<p><strong>:</strong></p>
+<p>Get the status of the wifi shield, will either be connected or not connected.</p>
+<p><strong>returns</strong> With wifi shield successfully attached will send response <code>Wifi present$$$</code>. If there is no OpenBCI board attached, will send <code>Wifi not present, send { to attach the shield$$$</code>.</p>
+<p><strong>;</strong></p>
+<p>Perform a soft reset of the Wifi shield. Will do a power on reset of just the wifi shield.</p>
+<h3><a class="anchor" aria-hidden="true" id="get-version"></a><a href="#get-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Version</h3>
+<p><strong>V</strong> To get firmware version</p>
+<p><strong>returns</strong> <code>v3.1.1$$$</code></p>
+<h2><a class="anchor" aria-hidden="true" id="unused-ascii-characters"></a><a href="#unused-ascii-characters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unused ASCII Characters</h2>
+<p>These are currently unused (and user available) characters in the OpenBCI Cyton platform:</p>
+<p><strong>9 ( ) _ o O f g h k l ' &quot; n N M , . (space)</strong></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/25/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonDataFormat"><span class="arrow-prev">← </span><span>Cyton Data Format</span></a><a class="docs-next button" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonProgram"><span>Cyton Board Programming Tutorial</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#cyton-command-protocol-overview">Cyton Command Protocol Overview</a></li><li><a href="#command-set">Command Set</a><ul class="toc-headings"><li><a href="#turn-channels-off">Turn Channels OFF</a></li><li><a href="#turn-channels-on">Turn Channels ON</a></li><li><a href="#test-signal-control-commands">Test Signal Control Commands</a></li><li><a href="#channel-setting-commands">Channel Setting Commands</a></li><li><a href="#default-channel-settings">Default Channel Settings</a></li><li><a href="#leadoff-impedance-commands">LeadOff Impedance Commands</a></li><li><a href="#sd-card-commands">SD card Commands</a></li><li><a href="#stream-data-commands">Stream Data Commands</a></li><li><a href="#miscellaneous">Miscellaneous</a></li></ul></li><li><a href="#16-channel-commands">16 Channel Commands</a><ul class="toc-headings"><li><a href="#turn-channels-off-1">Turn Channels OFF</a></li><li><a href="#turn-channels-on-1">Turn Channels ON</a></li><li><a href="#select-maximum-channel-number">Select maximum channel number</a></li></ul></li><li><a href="#firmware-v200-new-commands">Firmware v2.0.0 New Commands</a><ul class="toc-headings"><li><a href="#time-stamping">Time Stamping</a></li><li><a href="#get-radio-channel-number">Get Radio Channel Number</a></li><li><a href="#set-radio-system-channel-number">Set Radio System Channel Number</a></li><li><a href="#set-host-radio-channel-override">Set Host Radio Channel Override</a></li><li><a href="#radio-get-poll-time">Radio Get Poll Time</a></li><li><a href="#radio-set-poll-time">Radio Set Poll Time</a></li><li><a href="#radio-set-host-to-driver-baud-rate-to-default">Radio Set HOST to Driver Baud Rate to Default</a></li><li><a href="#radio-set-host-to-driver-baud-rate-to-high-speed-mode">Radio Set HOST to Driver Baud Rate to High-Speed mode</a></li><li><a href="#radio-set-host-to-driver-baud-rate-to-hyper-speed-mode">Radio Set HOST to Driver Baud Rate to Hyper-Speed mode</a></li><li><a href="#radio-system-status">Radio System Status</a></li></ul></li><li><a href="#firmware-v300-new-commands">Firmware v3.0.0 New Commands</a><ul class="toc-headings"><li><a href="#sample-rate">Sample Rate</a></li><li><a href="#board-mode">Board Mode</a></li><li><a href="#wifi-shield-commands">Wifi Shield Commands</a></li><li><a href="#get-version">Get Version</a></li></ul></li><li><a href="#unused-ascii-characters">Unused ASCII Characters</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/Documentation-website-OpenBCI/" class="nav-home"><img src="/Documentation-website-OpenBCI/img/favicon.ico" alt="OpenBCI Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/Documentation-website-OpenBCI/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/Documentation-website-OpenBCI/docs/en/doc2.html">Guides (or other categories)</a><a href="/Documentation-website-OpenBCI/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/Documentation-website-OpenBCI/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/Documentation-website-OpenBCI/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/Documentation-website-OpenBCI/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 OpenBCI</section></footer></div></body></html>

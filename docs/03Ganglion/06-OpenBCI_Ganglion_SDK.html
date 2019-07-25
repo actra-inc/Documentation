@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>03Ganglion/06-OpenBCI_Ganglion_SDK · OpenBCI Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# OpenBCI Ganglion SDK"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="03Ganglion/06-OpenBCI_Ganglion_SDK · OpenBCI Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/"/><meta property="og:description" content="# OpenBCI Ganglion SDK"/><meta property="og:image" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/Documentation-website-OpenBCI/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/Documentation-website-OpenBCI/js/scrollSpy.js"></script><link rel="stylesheet" href="/Documentation-website-OpenBCI/css/main.css"/><script src="/Documentation-website-OpenBCI/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/Documentation-website-OpenBCI/"><img class="logo" src="/Documentation-website-OpenBCI/img/favicon.ico" alt="OpenBCI Documentation"/><h2 class="headerTitleWithLogo">OpenBCI Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/Documentation-website-OpenBCI/docs/01GettingStarted/Welcome" target="_self">Documentation</a></li><li class=""><a href="/Documentation-website-OpenBCI/docs/doc4" target="_self">Shipping and other FAQ</a></li><li class=""><a href="/Documentation-website-OpenBCI/docs/test/test" target="_self">Example Projects</a></li><li class=""><a href="/Documentation-website-OpenBCI/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">03Ganglion/06-OpenBCI_Ganglion_SDK</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="openbci-ganglion-sdk"></a><a href="#openbci-ganglion-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OpenBCI Ganglion SDK</h1>
+<p>The OpenBCI boards communicate using a byte string (mostly ASCII) command protocol. This Doc covers command use for the OpenBCI Ganglion. Further this Doc covers the commands needed in order to alter the radio system. There have been several iterations of the firmware, please send reset commands to your board to see what firmware you have if you're unsure!</p>
+<h2><a class="anchor" aria-hidden="true" id="ganglion-command-protocol-overview"></a><a href="#ganglion-command-protocol-overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ganglion Command Protocol Overview</h2>
+<p>Ganglion boards have a powerful microcontroller on board that comes pre-programmed with the firmware. The Simblee radio link uses the Nordic Gazelle stack and library along with a BLE stack. The microcontroller has been programmed with firmware that interfaces between the MCP (Analog Front End), LIS3DH (Accelerometer), and micro SD (if installed). The user, or application, controls the board by sending commands over wireless serial connection.</p>
+<p>On startup, the OpenBCI Ganglion board sends the following text over the radio:</p>
+<pre><code class="hljs">OpenBCI Ganglion v2.0.0
+</code></pre>
+<p>LIS2DH ID: 0x33
+MCP3912 CONFIG_1: 0xXX
+use !,@,#,$ to turn ON channels</p>
+<p>send 'b' to start data stream</p>
+<p>send 's' to stop data stream</p>
+<p>use 1,2,3,4 to turn OFF channels</p>
+<p>send '?' to print all registers</p>
+<p>send 'v' to initialize board</p>
+<p>send '[' ']' to enable/disable synthetic square wave</p>
+<p>send 'z' 'Z' to start/stop impedance test</p>
+<p>send 'n','N' to enable/disable accelerometer&quot;</p>
+<h2><a class="anchor" aria-hidden="true" id="command-set"></a><a href="#command-set" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command Set</h2>
+<h3><a class="anchor" aria-hidden="true" id="turn-channels-off"></a><a href="#turn-channels-off" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Turn Channels OFF</h3>
+<p><strong>1 2 3 4</strong>  <br>
+These ASCII characters turn the respective channels [1-4] off. The channel will read 0.00 when off during streamData mode. These commands work in and out of streamData mode.</p>
+<h3><a class="anchor" aria-hidden="true" id="turn-channels-on"></a><a href="#turn-channels-on" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Turn Channels ON</h3>
+<p><strong>! @ # $</strong>  <br>
+These ASCII characters turn the respective channels [1-4] on. The channel will read ADC output values during streamData mode. These commands work in and out of streamData mode.</p>
+<h3><a class="anchor" aria-hidden="true" id="synthetic-square-wave-on"></a><a href="#synthetic-square-wave-on" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Synthetic Square Wave ON</h3>
+<p><strong>[</strong>  <br>
+Turn on and generate a fake square wave signal.</p>
+<h3><a class="anchor" aria-hidden="true" id="synthetic-square-wave-off"></a><a href="#synthetic-square-wave-off" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Synthetic Square Wave OFF</h3>
+<p><strong>]</strong>  <br>
+Turn off and generate a fake square wave signal.</p>
+<h3><a class="anchor" aria-hidden="true" id="leadoff-impedance"></a><a href="#leadoff-impedance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LeadOff Impedance</h3>
+<p><strong>z</strong>  <br>
+Start an impedance test, will send back impedance packets!</p>
+<p><strong>Z</strong>  <br>
+Stop an impedance test.</p>
+<h3><a class="anchor" aria-hidden="true" id="accelerometer"></a><a href="#accelerometer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accelerometer</h3>
+<p><strong>n</strong>  <br>
+Start accelerometer which results in 18-bit delta compression of channel data.</p>
+<p><strong>N</strong>  <br>
+Stop accelerometer which results in 19-bit delta compression of channel data.</p>
+<h3><a class="anchor" aria-hidden="true" id="sd-card-commands"></a><a href="#sd-card-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SD card Commands</h3>
+<p><strong>A S F G H J K L</strong>  <br>
+Send to initiate SD card data logging for specified time</p>
+<ul>
+<li>A    =      5MIN</li>
+<li>S    =      15MIN</li>
+<li>F    =      30MIN</li>
+<li>G    =      1HR</li>
+<li>H    =      2HR</li>
+<li>J    =      4HR</li>
+<li>K    =      12HR</li>
+<li>L    =      24HR</li>
+<li>a    =      about 14 seconds for testing</li>
+</ul>
+<p><strong>j</strong>  <br>
+Stop logging data and close SD file</p>
+<h3><a class="anchor" aria-hidden="true" id="stream-data-commands"></a><a href="#stream-data-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream Data Commands</h3>
+<p><strong>b</strong>  <br>
+Start streaming data</p>
+<p><strong>s</strong>  <br>
+Stop Streaming data</p>
+<h3><a class="anchor" aria-hidden="true" id="miscellaneous"></a><a href="#miscellaneous" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Miscellaneous</h3>
+<p><strong>?</strong>  <br>
+Query register settings<br>
+Read and report all register settings for the MCP and the LIS3DH. Expect to get a verbose serial output from the OpenBCI Board.</p>
+<p><strong>v</strong>
+Soft reset for the Board peripherals.</p>
+<h2><a class="anchor" aria-hidden="true" id="firmware-v2xx-new-commands"></a><a href="#firmware-v2xx-new-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Firmware v2.x.x New Commands</h2>
+<p>Supporting all v1.0.0, the v2.0.0 firmware extends the OpenBCI Ganglion system to allow for a variable sample rate.</p>
+<h3><a class="anchor" aria-hidden="true" id="sample-rate"></a><a href="#sample-rate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Rate</h3>
+<p><strong>~(COMMAND)</strong>  <br>
+This works similar to the Channel Settings commands, however, there is no latching character. Power cycling the OpenBCI Ganglion board will cause the sample rate to reset back to default of 200Hz.</p>
+<p><strong>IMPORTANT!</strong> The Ganglion cannot and will not stream data over 200SPS. Plug in the wifi shield to get speeds over 200SPS streaming.</p>
+<p><strong>COMMAND</strong></p>
+<ul>
+<li>0 = 25600 Hz</li>
+<li>1 = 12800 Hz</li>
+<li>2 = 6400 Hz</li>
+<li>3 = 3200 Hz</li>
+<li>4 = 1600 Hz</li>
+<li>5 = 800 Hz</li>
+<li>6 = 400 Hz</li>
+<li>7 = 200 Hz</li>
+<li>~ = Get current sample rate</li>
+</ul>
+<p><strong>EXAMPLE</strong></p>
+<p>First, user sends <strong>~~</strong></p>
+<p><strong>returns</strong> <code>Sample rate is 200Hz</code></p>
+<p>Then, user sends <strong>~5</strong></p>
+<p><strong>returns</strong> <code>Sample rate set to 800Hz$$$</code></p>
+<h3><a class="anchor" aria-hidden="true" id="wifi-shield-commands"></a><a href="#wifi-shield-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wifi Shield Commands</h3>
+<p><strong>{</strong></p>
+<p>Try to attach a Wifi Shield</p>
+<p><strong>returns</strong> Success will send response <code>Success: Wifi attached$$$</code> on failure response will be <code>Failure: Wifi not attached$$$</code>. Failure happens when the wifi shield is not powered up or the wifi shield does not power correctly. Try power cycling the system if failure continues.</p>
+<p><strong>}</strong></p>
+<p>Remove an attached wifi shield.</p>
+<p><strong>returns</strong> Success will send response <code>Success: Wifi removed$$$</code> on failure response will be <code>Failure: Wifi not removed$$$</code>. Failure occurs when no wifi shield is present to remove.</p>
+<p><strong>:</strong></p>
+<p>Get the status of the wifi shield, will either be connected or not connected.</p>
+<p><strong>returns</strong> With wifi shield successfully attached will send response <code>Wifi present$$$</code>. If there is no OpenBCI board attached, will send <code>Wifi not present, send { to attach the shield$$$</code>.</p>
+<p><strong>;</strong></p>
+<p>Perform a soft reset of the Wifi shield. Will do a power on reset of just the wifi shield.</p>
+<h2><a class="anchor" aria-hidden="true" id="unused-ascii-characters"></a><a href="#unused-ascii-characters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unused ASCII Characters</h2>
+<p>These are currently unused (and user available) characters in the OpenBCI Ganglion platform:</p>
+<p><strong>a A B c C d D e E f F g G h H i I j J k K l L m M o O p P q Q r R S t T u U V w W x X y Y ` 5 6 7 8 9 0 % ^ &amp; * ( ) - _ { } [ ] ; : ' &quot; , . / \ | (space)</strong></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/25/2019</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#ganglion-command-protocol-overview">Ganglion Command Protocol Overview</a></li><li><a href="#command-set">Command Set</a><ul class="toc-headings"><li><a href="#turn-channels-off">Turn Channels OFF</a></li><li><a href="#turn-channels-on">Turn Channels ON</a></li><li><a href="#synthetic-square-wave-on">Synthetic Square Wave ON</a></li><li><a href="#synthetic-square-wave-off">Synthetic Square Wave OFF</a></li><li><a href="#leadoff-impedance">LeadOff Impedance</a></li><li><a href="#accelerometer">Accelerometer</a></li><li><a href="#sd-card-commands">SD card Commands</a></li><li><a href="#stream-data-commands">Stream Data Commands</a></li><li><a href="#miscellaneous">Miscellaneous</a></li></ul></li><li><a href="#firmware-v2xx-new-commands">Firmware v2.x.x New Commands</a><ul class="toc-headings"><li><a href="#sample-rate">Sample Rate</a></li><li><a href="#wifi-shield-commands">Wifi Shield Commands</a></li></ul></li><li><a href="#unused-ascii-characters">Unused ASCII Characters</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/Documentation-website-OpenBCI/" class="nav-home"><img src="/Documentation-website-OpenBCI/img/favicon.ico" alt="OpenBCI Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/Documentation-website-OpenBCI/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/Documentation-website-OpenBCI/docs/en/doc2.html">Guides (or other categories)</a><a href="/Documentation-website-OpenBCI/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/Documentation-website-OpenBCI/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/Documentation-website-OpenBCI/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/Documentation-website-OpenBCI/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 OpenBCI</section></footer></div></body></html>

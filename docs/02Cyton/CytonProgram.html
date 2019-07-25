@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Cyton Board Programming Tutorial · OpenBCI Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Overview"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Cyton Board Programming Tutorial · OpenBCI Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/"/><meta property="og:description" content="## Overview"/><meta property="og:image" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/Documentation-website-OpenBCI/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/Documentation-website-OpenBCI/js/scrollSpy.js"></script><link rel="stylesheet" href="/Documentation-website-OpenBCI/css/main.css"/><script src="/Documentation-website-OpenBCI/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/Documentation-website-OpenBCI/"><img class="logo" src="/Documentation-website-OpenBCI/img/favicon.ico" alt="OpenBCI Documentation"/><h2 class="headerTitleWithLogo">OpenBCI Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/Documentation-website-OpenBCI/docs/01GettingStarted/Welcome" target="_self">Documentation</a></li><li class=""><a href="/Documentation-website-OpenBCI/docs/doc4" target="_self">Shipping and other FAQ</a></li><li class=""><a href="/Documentation-website-OpenBCI/docs/test/test" target="_self">Example Projects</a></li><li class=""><a href="/Documentation-website-OpenBCI/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Cyton Board</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started with OpenBCI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/Welcome">Welcome to the OpenBCI Community</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/CytonGS">Cyton Getting Started Guide</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/GanglionGS">Ganglion Getting Started Guide</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/WiFiGS">WiFi Shield Getting Started Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Cyton Board<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonLanding">Cyton Board</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSpecs">Cyton Specs</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonDataFormat">Cyton Data Format</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSDK">Cyton Board SDK</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonProgram">Cyton Board Programming Tutorial</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonRadios">Cyton Radios Programming Tutorial</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonExternal">External Trigger on OpenBCI Cyton Board</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSDCard">Using SD Card with OpenBCI</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Compatible Software<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/doc3">This is document number 3</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Cyton Board Programming Tutorial</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+<p>The OpenBCI Cyton boards have powerful microcontrollers on them which ship with the latest OpenBCI firmware to interface with the on-board ADS1299, Accelerometer, and SD card. This tutorial explains how to program the firmware using the OpenBCI Dongle and you PC. If we come out with a firmware upgrade, or if your or someone comes up with a custom program that you want to implement, you should use the following method. We made major changes to the Cyton firmware in 2016 with v2.x and again in 2017 with v3.x. This tutorial covers the v2 and v3, as well as v1. If you have already mucked about in the code using the v1 firmware, and want to upgrade, check out the <a href="http://docs.openbci.com/Hardware/05-Cyton_Board_Programming_Tutorial#cyton-board-programming-tutorial-notes-on-updating-and-using-v200-cyton-firmware">Notes</a> at the end of this doc. Happy Hacking!</p>
+<p><strong>Note, you do not need to do any board programming if you want to use the Cyton out-of-the-box. All OpenBCI boards ship already programmed, i.e. with firmware already uploaded.</strong> If you're curious about how we do it, keep reading! If you just want to start streaming EEG/EMG/ECG data right away, head over to the <a href="https://docs.openbci.com/OpenBCI%20Software/01-OpenBCI_GUI">software page.</a></p>
+<h2><a class="anchor" aria-hidden="true" id="firmware-versions-2xx-3xx-fall-2016-present"></a><a href="#firmware-versions-2xx-3xx-fall-2016-present" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Firmware Versions 2.x.x &amp; 3.x.x (Fall 2016 - present)</h2>
+<p>These instructions apply to programming the Cyton with firmware versions 2.x.x, 3.x.x, and onwards! The radio firmware (the firmware for the dongle and the radio module on your Cyton Board) has not been updated since prior to Fall 2016, so as long as you purchased your Cyton Board after that date, you do not need to worry about reprogramming your radios. For information about uploading the original OpenBCI Cyton firmware (1.x.x), see below.</p>
+<p><strong>You will need:</strong></p>
+<ul>
+<li><p>Computer running <a href="https://www.arduino.cc/en/Main/Software">Arduino v1.8.0</a> or later</p></li>
+<li><p>OpenBCI Dongle connected to USB port</p></li>
+<li><p>OpenBCI Cyton Board with battery power</p></li>
+<li><p>OpenBCI Cyton Firmware (follow guide below to download)</p></li>
+<li><p>OpenBCI Cyton SD Firmware (follow guide below to download)</p></li>
+<li><p>OpenBCI WiFi Master Firmware (follow guide below to download)</p></li>
+<li><p>If your computer does not have Arduino v1.8.0 (or later), install the latest Arduino IDE which can be found here: <a href="https://www.arduino.cc/en/Main/Software">https://www.arduino.cc/en/Main/Software</a></p></li>
+</ul>
+<p><strong>Note for Windows users</strong> While installing Arduino 1.8, if the installer instructs you to uninstall 1.5.8, move the Arduino folder containing 1.5.8 from <code>Program Files</code> to your desktop or another folder. Rename this folder to <code>Arduino_1.5.8</code>. Open the <code>Change or remove program</code> app in control panel and uninstall the Arduino application. There will be a popup indicating that the files do not exist and asking if you want to remove the program from the files list, select yes. Then install 1.8.0 as normal. Navigate to back to your <code>Program Files</code> folder and locate the Arduino folder. Rename this folder to <code>Arduino_1.8.0</code>. Now drag and drop the <code>Arduino_1.5.8</code> back into <code>Program Files</code> folder.</p>
+<h3><a class="anchor" aria-hidden="true" id="install-firmware-from-arduino-library-manager-easiest"></a><a href="#install-firmware-from-arduino-library-manager-easiest" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install Firmware From Arduino Library Manager (easiest!)</h3>
+<p>Don't know what the <em>Library Manager</em> is? Skim over the <a href="https://www.arduino.cc/en/Guide/Libraries#toc3">Official Arduino Guide</a>.</p>
+<p>Open the <em>Library Manager</em> and search for <em>OpenBCI</em> and install the latest version for <code>OpenBCI_32bit_Library</code>, <code>OpenBCI_32bit_SD</code> and <code>OpenBCI_Wifi_Master</code>.</p>
+<p>Now jump down to the section <a href="http://docs.openbci.com/Hardware/05-Cyton_Board_Programming_Tutorial#cyton-board-programming-tutorial-firmware-versions-2xx-3xx-fall-2016-present-install-chipkit-core-firmware">install ChipKit Core</a></p>
+<h3><a class="anchor" aria-hidden="true" id="manual-installation-of-cyton-firmware"></a><a href="#manual-installation-of-cyton-firmware" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manual Installation of Cyton Firmware</h3>
+<ol>
+<li>Download the latest <a href="http://www.arduinolibraries.info/libraries/open-bci_32bit_library">OpenBCI_32bit_Library</a>, it's the top most zip file.</li>
+<li>Unzip the folder and change the name to <code>OpenBCI_32bit_Library</code></li>
+<li>Move <code>OpenBCI_32bit_Library</code> to:</li>
+</ol>
+<p>On Mac: <code>/Documents/Arduino/libraries</code>  <br>
+On Windows: <code>C:\Users\username\Documents\Arduino\libraries</code></p>
+<p>If you're have trouble or want to learn more checkout the <a href="https://www.arduino.cc/en/Guide/Libraries#toc5">Official Arduino Guide</a> for manual installation.</p>
+<h3><a class="anchor" aria-hidden="true" id="manual-installation-of-cyton-sd-library"></a><a href="#manual-installation-of-cyton-sd-library" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manual Installation of Cyton SD Library</h3>
+<ol>
+<li><p>Download the latest <a href="http://www.arduinolibraries.info/libraries/open-bci_32bit_sd">OpenBCI_32bit_SD</a>, it's the top most zip file.</p></li>
+<li><p>Unzip the folder and change the name to <code>OpenBCI_32bit_SD</code></p></li>
+<li><p>Move <code>OpenBCI_32bit_SD</code> to:</p>
+<p>On Mac: <code>/Documents/Arduino/libraries</code>  <br>
+On Windows: <code>C:\Users\username\Documents\Arduino\libraries</code></p></li>
+</ol>
+<p>If you're have trouble or want to learn more checkout the <a href="https://www.arduino.cc/en/Guide/Libraries#toc5">Official Arduino Guide</a> for manual installation.</p>
+<h3><a class="anchor" aria-hidden="true" id="manual-installation-of-wifi-master-firmware"></a><a href="#manual-installation-of-wifi-master-firmware" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manual Installation of WiFi Master Firmware</h3>
+<ol>
+<li>Download the latest <a href="http://www.arduinolibraries.info/libraries/open-bci_wifi_master">WiFi Master Library</a>, it's the top most zip file.</li>
+<li>Unzip the folder and change the name to <code>OpenBCI_Wifi_Master</code></li>
+<li>Move <code>OpenBCI_Wifi_Master</code> to:</li>
+</ol>
+<p>On Mac: <code>/Documents/Arduino/libraries</code>  <br>
+On Windows: <code>C:\Users\username\Documents\Arduino\libraries</code></p>
+<p>If you're have trouble or want to learn more checkout the <a href="https://www.arduino.cc/en/Guide/Libraries#toc5">Official Arduino Guide</a> for manual installation.</p>
+<h3><a class="anchor" aria-hidden="true" id="clone-the-repos-from-github"></a><a href="#clone-the-repos-from-github" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clone The Repos From Github</h3>
+<p>Developers looking to contribute or write custom firmware can clone the firmware repositories directly to your <code>libraries</code> folder</p>
+<pre><code class="hljs">On Mac: `/Documents/Arduino/libraries`  
+On Windows: `C:\Users\username\Documents\Arduino\libraries`
+</code></pre>
+<ul>
+<li><a href="https://github.com/OpenBCI/OpenBCI_32bit_Library">OpenBCI_32bit_Library</a></li>
+<li><a href="https://github.com/OpenBCI/OpenBCI_32bit_SD">OpenBCI_32bit_SD</a></li>
+<li><a href="https://github.com/OpenBCI/OpenBCI_Wifi_Master_Library">OpenBCI_Wifi_Master_Library</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="install-chipkit-core-firmware"></a><a href="#install-chipkit-core-firmware" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install ChipKIT Core Firmware</h3>
+<ul>
+<li>Before you can upload code correctly to the PIC32 with Arduino, you need to add the chipKIT-core board files to your Arduino IDE. The folks at chipKIT have put together instructions on how to <a href="http://chipkit.net/wiki/index.php?title=ChipKIT_core#1.29_Auto_install_via_URL_from_within_Arduino_IDE_.28latest_version_chipKIT-core_v1.3.1.29">Auto Install via URL from within Arduino</a>.</li>
+</ul>
+<p><strong>NOTE</strong> Latest ChipKIT firmware may cause improper flashing of the device firmware. In such a case [No data stream from the board/No device ID and accelerometer ID after soft resetting the board] select the firmware version 1.3.1.</p>
+<h3><a class="anchor" aria-hidden="true" id="select-openbci-32-as-board"></a><a href="#select-openbci-32-as-board" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Select 'OpenBCI 32' as Board</h3>
+<p>If you followed the process in the previous link, and you will be able to select the <em>OpenBCI 32</em> board from the Tools &gt;&gt; Board &gt;&gt; dropdown menu!</p>
+<p><img src="../assets/images/OBCI32_Board_Dropdown.png" alt="board_dropdown"></p>
+<h3><a class="anchor" aria-hidden="true" id="select-defaultboardino-from-examples"></a><a href="#select-defaultboardino-from-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Select DefaultBoard.ino from Examples</h3>
+<ul>
+<li>In the Arduino IDE go to <code>File--&gt;Examples--&gt;OpenBCI_32bit_Library--&gt;DefaultBoard</code> which will launch the Cyton firmware. <strong>NOTE You must upload ONLY the <code>DefaultBoard</code> Sketch!</strong></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="pre-upload-hardware-setting"></a><a href="#pre-upload-hardware-setting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pre-upload Hardware Setting</h3>
+<ul>
+<li>Make sure that the slide switch on the OpenBCI Dongle is switched to the GPIO6 selection. If it's on the other side, it will try to program the Dongle-mounted RFduino!</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="plug-in-dongle-and-select-serial-port"></a><a href="#plug-in-dongle-and-select-serial-port" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plug in Dongle and Select Serial Port</h3>
+<p>Now is a good time to plug your Dongle in and power down the Board.</p>
+<p><img src="../assets/images/PortSelect.png" alt="serial_port"></p>
+<ul>
+<li><p>Select the correct serial port for your OpenBCI Dongle.</p>
+<ul>
+<li><p>On Macs, this will be named <strong>/dev/tty.usbserial-DN00nnnn</strong> where the nnnn is a combination of numbers and letters specific to your openBCI Dongle.</p></li>
+<li><p>On Windows, the serial port will be listed as a numbered COM port.</p></li>
+<li><p>On Linux, it will be different.</p></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="put-cyton-in-bootloaded-mode"></a><a href="#put-cyton-in-bootloaded-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Put Cyton in Bootloaded Mode</h3>
+<ul>
+<li>When you are happy with the code, you will have to put the 32bit board into bootloader mode. We don't have a way to remotely reset the chipKIT compatible IC, so you have to do it manually with the procedure that follows:</li>
+</ul>
+<p><img src="../assets/images/RST_PROG.png" alt="reset_program"></p>
+<ol>
+<li>Power OFF the OpenBCI Board.</li>
+<li>Press down both RST and PROG buttons at the same time.</li>
+<li>Power ON the OpenBCI Board.</li>
+<li>Release the RST button while still holding down the PROG button.</li>
+<li>Release the PROG button.</li>
+</ol>
+<p><img src="../assets/images/Upload32.png" alt="Upload32"></p>
+<ul>
+<li>Verify that you see the blue LED on the 32bit board blinking pleasantly.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="upload-the-firmware"></a><a href="#upload-the-firmware" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upload the Firmware</h3>
+<ul>
+<li>Press the upload button on the Arduino IDE.</li>
+</ul>
+<p>That's it! You will see some blinky lights on the Dongle, and after a short while, the Arduino IDE will tell you that it's done. Happy Hacking!</p>
+<h2><a class="anchor" aria-hidden="true" id="firmware-version-1xx-2014-fall-2016"></a><a href="#firmware-version-1xx-2014-fall-2016" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Firmware Version 1.x.x (2014 - Fall 2016)</h2>
+<p><strong>You will need:</strong></p>
+<ul>
+<li>Computer running <a href="https://www.arduino.cc/en/Main/Software">Arduino v1.8.0</a> or later</li>
+<li>OpenBCI Dongle connected to USB port</li>
+<li>OpenBCI Cyton Board with battery power</li>
+</ul>
+<p><img src="../assets/images/dongleConnection.png" alt="OpenBCI Dongle"></p>
+<p><strong><em>Note</em></strong>: Always plug the Dongle into the PC before powering the Board because the Host (RFduino on the Dongle) must be powered before the Device (RFduino on the Board).</p>
+<p>First, install the Arduino IDE which can be found here:</p>
+<p><a href="https://www.arduino.cc/en/Main/Software">https://www.arduino.cc/en/Main/Software</a></p>
+<p><strong>Note for Windows users</strong> While installing Arduino 1.8, if the installer instructs you to uninstall 1.5.8, move the Arduino folder containing 1.5.8 from <code>Program Files (x86)</code> to your downloads folder. Rename this folder to <code>Arduino_1.5.8</code>. Open the <code>Change or remove program</code> app in control panel and uninstall the Arduino application. There will be a popup indicating that the files do not exist and asking if you want to remove the program from the files list, select yes. Then install 1.8.0 as normal. Navigate to back to your <code>Program Files (x86)</code> folder and locate the Arduino folder. Rename this folder to <code>Arduino_1.8.0</code>. Now drag and drop the <code>Arduino_1.5.8</code> back into <code>Program Files (x86)</code> folder.</p>
+<p>You can find the previous OpenBCI firmware and libraries on our github repository.</p>
+<pre><code class="hljs">https://github.com/OpenBCI/OpenBCI_32bit
+
+https://github.com/OpenBCI/OpenBCI_32bit_Library/tree/maint/1.0.0
+</code></pre>
+<ul>
+<li>OpenBCI_32bit
+<ul>
+<li>This is the firmware that runs on the OpenBCI 32bit Board</li>
+</ul></li>
+<li>OBCI_SD
+<ul>
+<li>Supports writing raw data to on-board SD card</li>
+</ul></li>
+<li>OpenBCI_32_Daisy
+<ul>
+<li>The OpenBCI 32bit Library</li>
+</ul></li>
+</ul>
+<p>You will need to install the folders 'OpenBCI_32_Daisy' and 'OBCI_SD' from our Libraries repository into your Documents/Arduino/libraries folder. If there is no 'libraries' folder in the sketch folder, create one. Move the folder called 'OpenBCI_32bit' into your Documents/Arduino folder.</p>
+<p>Before you can upload code correctly to the PIC32 with Arduino, you need to add the chipKIT-core board files to your Arduino IDE. The folks at chipKIT have put together instructions on how to <a href="http://chipkit.net/wiki/index.php?title=ChipKIT_core#1.29_Auto_install_via_URL_from_within_Arduino_IDE_.28latest_version_chipKIT-core_v1.3.1.29">Auto Install via URL from within Arduino</a>. Follow the process in the previous link, and you will be able to select the OpenBCI board from the Tools &gt;&gt; Board &gt;&gt; dropdown menu!</p>
+<p><img src="../assets/images/OBCI32_Board_Dropdown.png" alt="board_dropdown"></p>
+<p>Open the OpenBCI_32bit sketch from the File -&gt; Sketchbook dropdown. Then select OpenBCI 32 from the Board drop-down menu.</p>
+<p>Make sure that the slide switch on the OpenBCI Dongle is switched to the GPIO6 selection (towards your computer). If it's on the other side, it will try to program the Dongle-mounted RFduino! Now is a good time to plug your Dongle in and power down the Cyton Board.</p>
+<p><img src="../assets/images/PortSelect.png" alt="serial_port"></p>
+<p>Select the correct serial port for your OpenBCI Dongle.</p>
+<ul>
+<li><p>On Macs, this will be named <strong>/dev/tty.usbserial-DN00nnnn</strong> where the nnnn is a combination of numbers and letters specific to your openBCI Dongle.</p></li>
+<li><p>On Windows, the serial port will be listed as a numbered COM port.</p></li>
+<li><p>On Linux, it will be different.</p></li>
+</ul>
+<p>When you are happy with the code, you will have to put the 32bit board into bootloader mode. We don't have a way to remotely reset the chipKIT compatible IC, so you have to do it manually.</p>
+<ul>
+<li><p>If you're uploading firmware 3.x.x, you'll need to make sure you have the WiFi library installed before uploading the firmware. To do this, go to Sketch &gt; Include Library &gt; Manage Libraries...</p></li>
+<li><p>Then, in the search field in the upper right, type OpenBCI WiFi.</p></li>
+<li><p>Now, click OpenBCI_WiFi_Master and install v1.0.0 (or the latest version if there are newer versions).</p></li>
+</ul>
+<p><img src="../assets/images/RST_PROG.png" alt="reset_program"></p>
+<p><strong>Note:</strong> we suggest that for the five steps below you use one thumb to press down both the RST and PROG buttons, while using your other thumb to toggle the switch between OFF and PC.</p>
+<ul>
+<li>Power OFF the OpenBCI Board.</li>
+<li>Press down both RST and PROG buttons at the same time (with your left thumb).</li>
+<li>Power ON the OpenBCI Board (with your right thumb).</li>
+<li>Release the RST button while still holding down the PROG button.</li>
+<li>Release the PROG button.</li>
+</ul>
+<p>Now you should see the blue LED on the Cyton Board blinking pleasantly. Your Cyton board is ready to be flashed!</p>
+<ul>
+<li>Press the upload button on the Arduino IDE (the circular button with the arrow pointing to the right). That's it! You will see some blinky lights on the Dongle, and after a short while, the Arduino IDE will tell you that it's done. Happy Hacking!</li>
+</ul>
+<p><img src="../assets/images/Upload32.png" alt="image"></p>
+<p>** Note: ** occasionally, you may see the error message in the screenshot below. You can ignore this. As long as
+<code>Program flash: ...................................#################################### done</code> appears, 99 out of 100 times your firmware uploaded correctly. If your board doesn't appear to be working in the GUI (or other software), simply try re-uploading the firmware.</p>
+<p><img src="../assets/images/oddUploadError.png" alt="Upload32"></p>
+<h2><a class="anchor" aria-hidden="true" id="8bit-upload-how-to"></a><a href="#8bit-upload-how-to" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8bit Upload How-To</h2>
+<h3><a class="anchor" aria-hidden="true" id="note-the-8bit-hardware-is-no-longer-in-production"></a><a href="#note-the-8bit-hardware-is-no-longer-in-production" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NOTE: The 8bit Hardware is no longer in production</h3>
+<p><strong>You will need:</strong></p>
+<ul>
+<li>Computer running Arduino IDE</li>
+<li>OpenBCI Dongle connected to USB port</li>
+<li>OpenBCI 8bit Board with battery power</li>
+</ul>
+<p><img src="../assets/images/dongleConnection.png" alt="OpenBCI Dongle"></p>
+<p>Make sure that the slide switch on the OpenBCI Dongle is switched to the GPIO6 selection. That way the DTR reset signal will get passed over-air to the ATmega328. If it's on the other side, it will try to program the Dongle-mounted RFduino!<br>
+You can find the latest firmware and libraries on our github repository</p>
+<p><a href="https://github.com/OpenBCI/OpenBCI_8bit">https://github.com/OpenBCI/OpenBCI_8bit</a></p>
+<p>You will need to install these files from our repository into your Documents/arduino/libraries folder</p>
+<ul>
+<li>SdFat
+<ul>
+<li>Supports writing raw data to on-board SD card</li>
+</ul></li>
+<li>OpenBCI_8
+<ul>
+<li>The OpenBCI 8bit Library</li>
+</ul></li>
+</ul>
+<p><img src="../assets/images/Arduino_IDE.png" alt="ArduinoIDE"></p>
+<p>Move the file OpenBCI_8bit_SD.ino into your Documents/arduino folder, and start up the Arduino IDE. you should then see the sketch in your Sketch folder.</p>
+<p><img src="../assets/images/BoardSelect.png" alt="selectBoardUno"></p>
+<p>Select Arduino UNO from the Board drop-down menu.</p>
+<p><img src="../assets/images/SerialPortSelect.png" alt="selectSerialPort"></p>
+<p>Select the correct serial port for your OpenBCI Dongle.</p>
+<ul>
+<li><p>On Macs, this will be named <strong>/dev/tty.usbserial-DN00nnnn</strong> where the nnnn is a combination of numbers and letters specific to your openBCI Dongle.</p></li>
+<li><p>On Windows, the serial port will be listed as a COM port.</p></li>
+<li><p>On Linux, it will be different.</p></li>
+</ul>
+<p><img src="../assets/images/Upload.png" alt="Upload"></p>
+<p>When you are happy with the code, simply press upload to program the OpenBCI 8bit target. That's it! You will see some blinky lights on the Dongle, and after a short while, the Arduino IDE will tell you that it's done.</p>
+<h2><a class="anchor" aria-hidden="true" id="troubleshooting"></a><a href="#troubleshooting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
+<p>If you're having an issue with <code>Board_Defs.h</code> and you're uploading using Linux, you must move ALL files located in: <br/> <code>/Arduino/hardware/chipkit-core/pic32/variants/openbci/</code> to <code>/Arduino/hardware/chipkit-core/pic32/cores/pic32/</code><br/> This should fix any issues you're having compiling.</p>
+<p>If the upload fails with <code>No Target Found</code>:</p>
+<ol>
+<li>Unplug the Dongle and Device.</li>
+<li>Plug the Dongle into your computer.</li>
+<li>Plug the Device into your computer.</li>
+<li>Put the device into bootloader mode.</li>
+<li>Try upload again.</li>
+</ol>
+<p>If the upload fails with <code>Program Flash Failed</code> it's due to the Arduino IDE not being able to read from the serial port fast enough possibly do to resource starvation or overall computer power. We recommend taking the following actions:</p>
+<ul>
+<li>Keep the Board and Dongle physically close to each other during the upload.</li>
+<li>Keep the Arduino IDE open, front and center and don't use any other programs during the upload.</li>
+<li>Close all open programs such as (Google Chrome, MS Word, etc...) and only have the Arduino 1.6.5 IDE open during upload.</li>
+<li>Restart your computer and don't open any other programs other than the Arduino IDE used for programming.</li>
+<li>If all else fails, find a friend with a more powerful computer and do the uploading from their computer.</li>
+</ul>
+<p>In extreme conditions, if you have tried all five of the above methods and still can't upload, then you can try to change the Device's polling time. The Poll Time can be adjusted using the OpenBCI Radio Config Utility software (<em>Tutorial coming soon!</em>)</p>
+<h2><a class="anchor" aria-hidden="true" id="notes-on-updating-and-using-v200-cyton-firmware"></a><a href="#notes-on-updating-and-using-v200-cyton-firmware" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Notes On Updating and Using v2.0.0 Cyton Firmware</h2>
+<h3><a class="anchor" aria-hidden="true" id="overview-1"></a><a href="#overview-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h3>
+<p>The OpenBCI Cyton boards were updated with new firmware across all three main microcontrollers, the Pic 32 (<a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/blob/master/examples/DefaultBoard/DefaultBoard.ino"><code>Pic32</code></a>) and both RFduinos on the Dongle (<a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioHost32bit/RadioHost32bit.ino"><code>Host</code></a>) and the Board (<a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioDevice32bit/RadioDevice32bit.ino"><code>Device</code></a>). This tutorial does not explain how to program the firmware using the OpenBCI Dongle and <code>PC</code>; you will want to refer to the tutorials <a href="http://docs.openbci.com/Hardware/05-Cyton_Board_Programming_Tutorial">Cyton Board Programming Tutorial</a> and <a href="http://docs.openbci.com/Hardware/06-Cyton_Radios_Programming_Tutorial">Cyton Radios Programming Tutorial</a>. If you have spent a lot of time writing custom Arduino code to run on the OpenBCI, then you will find this tutorial helpful in upgrading to get the new stability and features of the 2.0.0 firmware.</p>
+<h3><a class="anchor" aria-hidden="true" id="sending-data-packets-from-the-pic32-to-the-pc"></a><a href="#sending-data-packets-from-the-pic32-to-the-pc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sending data packets from the Pic32 to the PC</h3>
+<p>At 250Hz, we are at the upper limit of the physical hardware. The <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioDevice32bit/RadioDevice32bit.ino"><code>Device</code></a> RFduino must send data packets as soon as it get's them from the <a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/blob/master/examples/DefaultBoard/DefaultBoard.ino"><code>Pic32</code></a> because of the slow serial baud rate between <a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/blob/master/examples/DefaultBoard/DefaultBoard.ino"><code>Pic32</code></a> and <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioDevice32bit/RadioDevice32bit.ino"><code>Device</code></a> (<code>115200 baud</code>, a faster baud rate messes up the radio on the <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioDevice32bit/RadioDevice32bit.ino"><code>Device</code></a>). On the other hand, over the air programming must be able to combine multiple radio packets together into one page and write at one time, therefore, over the air programming must wait to see if it received all data over the serial port before sending. These two requirements led to the original firmware being stateful, where the <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioDevice32bit/RadioDevice32bit.ino"><code>Device</code></a> and <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioHost32bit/RadioHost32bit.ino"><code>Host</code></a> would be in either <code>streaming</code> or <code>not streaming</code> mode. This led to problems and could result in the <code>PC</code> not being able to contact the <code>Cyton</code> because the radios were stuck in streaming mode and the reset button on the <code>Cyton</code> is not tied to the <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioDevice32bit/RadioDevice32bit.ino"><code>Device</code></a> so one would have to power cycle the entire <code>Cyton</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="an-example"></a><a href="#an-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>An Example</h3>
+<p>Let's say you want to send custom data from the <code>Cyton</code> to the <code>PC</code>. In order to do that simply wrap the data with the correct start byte, <code>0x41</code>, and stop byte, <code>0xCX</code> (where <code>X</code> is <code>0-F</code> in hex). In the <code>OpenBCI_32bit_Library</code> code base:</p>
+<pre><code class="hljs"><span class="hljs-comment">/*  
+ * @description Writes channel data and axisData array to serial port in
+ *  the correct stream packet format.
+ *
+ *  Adds stop byte OPENBCI_EOP_STND_ACCEL. See OpenBCI_32bit_Library_Definitions.h
+ */</span>
+void OpenBCI_32bit_Library::send<span class="hljs-constructor">ChannelDataWithAccel(<span class="hljs-params">void</span>)</span>  {
+
+    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial0</span>.</span></span>write(<span class="hljs-character">'A'</span>); <span class="hljs-comment">// 0x41 1 byte</span>
+
+    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial0</span>.</span></span>write(sampleCounter); <span class="hljs-comment">// 1 byte</span>
+
+    <span class="hljs-constructor">ADS_writeChannelData()</span>; <span class="hljs-comment">// 24 bytes</span>
+
+    accel<span class="hljs-constructor">WriteAxisData()</span>; <span class="hljs-comment">// 6 bytes</span>
+
+    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial0</span>.</span></span>write(OPENBCI_EOP_STND_ACCEL); <span class="hljs-comment">// 0xC0 1 byte</span>
+
+    sampleCounter++;
+
+}
+</code></pre>
+<p>This code writes 33 bytes of data from the <a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/blob/master/examples/DefaultBoard/DefaultBoard.ino"><code>Pic32</code></a> to the <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioDevice32bit/RadioDevice32bit.ino"><code>Device</code></a> in the correct format and therefore as soon as it arrives at the <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioDevice32bit/RadioDevice32bit.ino"><code>Device</code></a> it will be sent to the <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioHost32bit/RadioHost32bit.ino"><code>Host</code></a> and to the <code>PC</code>. New to firmware version 2 is the ability to have different stop bytes, in the original firmware, one could only send stop bytes of <code>0xC0</code> however now, we can send <code>0xCn</code> where <code>n</code> is <code>0-F</code> (hex).<br>
+<strong>Important</strong> if you want to only send <code>20</code> bytes of data per packet, you still must send this <code>33</code> bytes with the proper start and stop bytes. Sending data too fast will result in a buffer overflow on the <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioDevice32bit/RadioDevice32bit.ino"><code>Device</code></a> and cause the system to restart and send an error message to the <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioHost32bit/RadioHost32bit.ino"><code>Host</code></a> and <code>PC</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="sending-one-byte-of-data-every-10ms-or-100hz"></a><a href="#sending-one-byte-of-data-every-10ms-or-100hz" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sending one byte of data every 10ms or 100Hz</h3>
+<p>Here is an example taken from the file called <code>BoardWithCustomData.ino</code> from the <code>examples</code> folder in the <code>OpenBCI_32bit_Library</code> repo.</p>
+<pre><code class="hljs">void send<span class="hljs-constructor">LEDStatus()</span> {
+  <span class="hljs-comment">// Must have header byte</span>
+  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial0</span>.</span></span>write(<span class="hljs-character">'A'</span>); <span class="hljs-comment">// 0x41 1 byte</span>
+  <span class="hljs-comment">// Write the LED state</span>
+  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial0</span>.</span></span>write(LEDState); <span class="hljs-comment">// 1 byte</span>
+  <span class="hljs-comment">// Fill the rest with fake data</span>
+  for (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">30</span>; i++) {
+    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial0</span>.</span></span>write(<span class="hljs-number">0x00</span>);
+  }
+  <span class="hljs-comment">// Send a stop byte with an `B` or `1011` in the last nibble to indicate a</span>
+  <span class="hljs-comment">//  different packet type.</span>
+  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial0</span>.</span></span>write(<span class="hljs-number">0xCB</span>); <span class="hljs-comment">// 1 byte</span>
+}
+</code></pre>
+<p>As you can see above, we only really want to send 1 byte, but if we want to do it fast, at this 100Hz rate, we must wrap it in the start byte and stop byte to tell the <a href="https://github.com/OpenBCI/OpenBCI_Radios/blob/master/examples/RadioDevice32bit/RadioDevice32bit.ino"><code>Device</code></a> to send the packet as soon as it get's the stop byte.</p>
+<h3><a class="anchor" aria-hidden="true" id="adopting-the-new-pic32-code-paradigm"></a><a href="#adopting-the-new-pic32-code-paradigm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adopting the new Pic32 code paradigm</h3>
+<p>We drastically reduced the complexity of the <code>.ino</code> files in order to make custom device programming more approachable for new programmers but also add a suite of features to give great power to great programmers. We have created an environment to drive contribution to the main project in the form of examples. If you want to contribute code the main library for others to use, now you can simply do a pull request. Joel was able to adapt his <a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/blob/master/examples/BoardWithPulseSensor/BoardWithPulseSensor.ino">pulse sensor code</a> to the new firmware in about 20 minutes! Now anyone who downloads the firmware, will get the pulse sensor code versus having to dig through all the <code>OpenBCI</code> repos to find an example of <a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/blob/master/examples/BoardWithPulseSensor/BoardWithPulseSensor.ino">how to use a pulse sensor</a>, <a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/blob/master/examples/BoardWith2ButtonExternalTriggers/BoardWith2ButtonExternalTriggers.ino">have external triggers</a>, <a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/blob/master/examples/BoardWithAnalogSensor/BoardWithAnalogSensor.ino">read an analog input</a>, etc...</p>
+<p>Please dig through the <a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/tree/master/examples"><code>examples</code></a> folder on the <a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/tree/master"><code>OpenBCI_32bit_Library</code></a> for a deep dive into all the possibilities with the new code. Remember if you have new code you want to share, please do!! <a href="https://help.github.com/articles/creating-a-pull-request/">Make a pull request</a>!</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/25/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSDK"><span class="arrow-prev">← </span><span>Cyton Board SDK</span></a><a class="docs-next button" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonRadios"><span>Cyton Radios Programming Tutorial</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a></li><li><a href="#firmware-versions-2xx-3xx-fall-2016-present">Firmware Versions 2.x.x &amp; 3.x.x (Fall 2016 - present)</a><ul class="toc-headings"><li><a href="#install-firmware-from-arduino-library-manager-easiest">Install Firmware From Arduino Library Manager (easiest!)</a></li><li><a href="#manual-installation-of-cyton-firmware">Manual Installation of Cyton Firmware</a></li><li><a href="#manual-installation-of-cyton-sd-library">Manual Installation of Cyton SD Library</a></li><li><a href="#manual-installation-of-wifi-master-firmware">Manual Installation of WiFi Master Firmware</a></li><li><a href="#clone-the-repos-from-github">Clone The Repos From Github</a></li><li><a href="#install-chipkit-core-firmware">Install ChipKIT Core Firmware</a></li><li><a href="#select-openbci-32-as-board">Select 'OpenBCI 32' as Board</a></li><li><a href="#select-defaultboardino-from-examples">Select DefaultBoard.ino from Examples</a></li><li><a href="#pre-upload-hardware-setting">Pre-upload Hardware Setting</a></li><li><a href="#plug-in-dongle-and-select-serial-port">Plug in Dongle and Select Serial Port</a></li><li><a href="#put-cyton-in-bootloaded-mode">Put Cyton in Bootloaded Mode</a></li><li><a href="#upload-the-firmware">Upload the Firmware</a></li></ul></li><li><a href="#firmware-version-1xx-2014-fall-2016">Firmware Version 1.x.x (2014 - Fall 2016)</a></li><li><a href="#8bit-upload-how-to">8bit Upload How-To</a><ul class="toc-headings"><li><a href="#note-the-8bit-hardware-is-no-longer-in-production">NOTE: The 8bit Hardware is no longer in production</a></li></ul></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#notes-on-updating-and-using-v200-cyton-firmware">Notes On Updating and Using v2.0.0 Cyton Firmware</a><ul class="toc-headings"><li><a href="#overview-1">Overview</a></li><li><a href="#sending-data-packets-from-the-pic32-to-the-pc">Sending data packets from the Pic32 to the PC</a></li><li><a href="#an-example">An Example</a></li><li><a href="#sending-one-byte-of-data-every-10ms-or-100hz">Sending one byte of data every 10ms or 100Hz</a></li><li><a href="#adopting-the-new-pic32-code-paradigm">Adopting the new Pic32 code paradigm</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/Documentation-website-OpenBCI/" class="nav-home"><img src="/Documentation-website-OpenBCI/img/favicon.ico" alt="OpenBCI Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/Documentation-website-OpenBCI/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/Documentation-website-OpenBCI/docs/en/doc2.html">Guides (or other categories)</a><a href="/Documentation-website-OpenBCI/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/Documentation-website-OpenBCI/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/Documentation-website-OpenBCI/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/Documentation-website-OpenBCI/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 OpenBCI</section></footer></div></body></html>

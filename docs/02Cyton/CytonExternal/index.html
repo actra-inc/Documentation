@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>External Trigger on OpenBCI Cyton Board · OpenBCI Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Sometimes, when studying EEG or other biopotential signals, you will want to have precise timing between external events or stimulus and the data stream. For example, if you are working with P300 waves it is necessary to know the exact time that the signal was presented to the subject in order to look for the tell-tale brain wave that happens about 300mS after the stimulus."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="External Trigger on OpenBCI Cyton Board · OpenBCI Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/"/><meta property="og:description" content="Sometimes, when studying EEG or other biopotential signals, you will want to have precise timing between external events or stimulus and the data stream. For example, if you are working with P300 waves it is necessary to know the exact time that the signal was presented to the subject in order to look for the tell-tale brain wave that happens about 300mS after the stimulus."/><meta property="og:image" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://andreaortuno.github.io/Documentation-website-OpenBCI/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/Documentation-website-OpenBCI/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/Documentation-website-OpenBCI/js/scrollSpy.js"></script><link rel="stylesheet" href="/Documentation-website-OpenBCI/css/main.css"/><script src="/Documentation-website-OpenBCI/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/Documentation-website-OpenBCI/"><img class="logo" src="/Documentation-website-OpenBCI/img/favicon.ico" alt="OpenBCI Documentation"/><h2 class="headerTitleWithLogo">OpenBCI Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/Documentation-website-OpenBCI/docs/01GettingStarted/Welcome" target="_self">Documentation</a></li><li class=""><a href="/Documentation-website-OpenBCI/docs/doc4" target="_self">Shipping and other FAQ</a></li><li class=""><a href="/Documentation-website-OpenBCI/docs/test/test" target="_self">Example Projects</a></li><li class=""><a href="/Documentation-website-OpenBCI/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Cyton Board</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started with OpenBCI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/Welcome">Welcome to the OpenBCI Community</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/CytonGS">Cyton Getting Started Guide</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/GanglionGS">Ganglion Getting Started Guide</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/01GettingStarted/WiFiGS">WiFi Shield Getting Started Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Cyton Board<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonLanding">Cyton Board</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSpecs">Cyton Specs</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonDataFormat">Cyton Data Format</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSDK">Cyton Board SDK</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonProgram">Cyton Board Programming Tutorial</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonRadios">Cyton Radios Programming Tutorial</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonExternal">External Trigger on OpenBCI Cyton Board</a></li><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSDCard">Using SD Card with OpenBCI</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Compatible Software<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/Documentation-website-OpenBCI/docs/doc3">This is document number 3</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">External Trigger on OpenBCI Cyton Board</h1></header><article><div><span><p>Sometimes, when studying EEG or other biopotential signals, you will want to have precise timing between external events or stimulus and the data stream. For example, if you are working with P300 waves it is necessary to know the exact time that the signal was presented to the subject in order to look for the tell-tale brain wave that happens about 300mS after the stimulus.</p>
+<p>This tutorial will cover a couple of ways to add an external trigger to the OpenBCI data stream on our 32bit Board. Please read this entire page before jaunting off into hardware hacking.</p>
+<p><strong>Note:</strong> As of 3.x.x Cyton firmware, the Cyton is able to switch board modes, now you don't have to upload new code to the board just to read from an input!</p>
+<p>##External Triggering The Easy Way (Firmware 3.x.x)</p>
+<h3><a class="anchor" aria-hidden="true" id="using-the-openbci-gui"></a><a href="#using-the-openbci-gui" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the OpenBCI GUI</h3>
+<p>Follow the official <a href="http://docs.openbci.com/OpenBCI%20Software/01-OpenBCI_GUI#the-openbci-gui-installing-the-openbci-gui-as-a-standalone-application">OpenBCI GUI guide</a> to download version 3.2.0 or later <a href="http://openbci.com/index.php/downloads">from our website</a>.</p>
+<p>Be sure that your Cyton firmware is later than <a href="https://github.com/OpenBCI/OpenBCI_32bit_Library/releases/tag/v3.1.0">v3.1.0</a> by following the <a href="http://docs.openbci.com/Hardware/05-Cyton_Board_Programming_Tutorial"><strong>tutorial here</strong></a>! May all your troubles disappear!</p>
+<p>Launch the OpenBCI GUI for your operating system following the tutorial for the <a href="http://docs.openbci.com/OpenBCI%20Software/01-OpenBCI_GUI#the-openbci-gui-running-the-openbci_gui">OpenBCI GUI</a> (remember to <a href="http://docs.openbci.com/OpenBCI%20Software/01-OpenBCI_GUI#the-openbci-gui-running-the-openbci_gui-running-on-windows">run your OpenBCIHub application</a> first windows users!).</p>
+<p>Once the GUI has launched, follow the guide to <a href="http://docs.openbci.com/Tutorials/01-Cyton_Getting%20Started_Guide#cyton-getting-started-guide-iv-connect-to-your-cyton-board-from-the-gui">connect to your Cyton from the OpenBCI GUI</a>.</p>
+<p>Once you have connected, you may selected the &quot;Digital Read&quot; for one of your widgets. Then select start digital read mode button in the top left of the newly populated widget. This will activate and send the proper commands to your cyton. Note that the accelerometer will no long be turned on because the trigger data is now sent instead.</p>
+<p>You can verify the digital read widget is working by pressing the &quot;PROG&quot; button which is hooked up to the D17 pin.</p>
+<p>When you use a Cyton USB dongle, you get up to 5 digital IO pins to read from: D11, D12, D13, D17 and D18! If there appears to be a delay between when you press the button and when the digital read widget in the GUI shows the button pressed, then you may want to lower your serial port latency. Checkout the guides for lowering serial port latency <a href="http://docs.openbci.com/Tutorials/11-OpenBCI_on_Windows">Windows</a> and <a href="http://docs.openbci.com/Tutorials/10-Mac_FTDI_Driver_Fix">macOS</a>, for Linux, we still need a guide and this could be a good first contribution for a community member!</p>
+<p>When you use a Cyton over <a href="https://shop.openbci.com/collections/frontpage/products/wifi-shield?variant=44534009550">WiFi Shield</a>, you get up to 3 digital IO pins to read from: D11, D12 and D17! There should be no noticeable delay from when you touch the button and when the digital read widget in the GUI shows the button pressed.</p>
+<h3><a class="anchor" aria-hidden="true" id="programmatically-setting-board-mode"></a><a href="#programmatically-setting-board-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Programmatically Setting Board Mode</h3>
+<p>Firmware 3.x.x brings a long requested out-of-the-box ability to read from analog or digital inputs with the default firmware. Allowing you to simply read from the analog input (sending <code>/2</code>) or digital input (sending <code>/3</code>) with the type of two ascii commands. The default board is activated by default, and can always be achieved again by sending a <code>/0</code>.</p>
+<p>Learn more about board modes in the <a href="http://docs.openbci.com/OpenBCI%20Software/04-OpenBCI_Cyton_SDK#openbci-cyton-sdk-firmware-v300-new-commands-board-mode">Cyton SDK</a>.</p>
+<p>##External Triggering The Easy Way (Firmware 2.x.x)</p>
+<p>Update to firmware version 3.x.x using the tutorial <a href="http://docs.openbci.com/Hardware/05-Cyton_Board_Programming_Tutorial"><strong>here</strong></a>! May all your troubles disappear!</p>
+<p>##External Triggering The Easy Way (Firmware 1.x.x)</p>
+<h3><a class="anchor" aria-hidden="true" id="sample-code-links"></a><a href="#sample-code-links" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Code Links</h3>
+<p>The code used in this example is located <a href="https://github.com/OpenBCI/OpenBCI_Button_Trigger"><strong>here</strong></a> for those of you who want to play along at home. There's a tutorial for how to program the 32bit Board <a href="http://docs.openbci.com/Hardware/05-Cyton_Board_Programming_Tutorial"><strong>here</strong></a></p>
+<h3><a class="anchor" aria-hidden="true" id="utilize-the-on-device-push-button"></a><a href="#utilize-the-on-device-push-button" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Utilize the on device push button</h3>
+<p>The OpenBCI 32bit Board comes with a user accessible pushbutton switch already on the board, wired right to the PIC32 microcontroller. Brilliant! It is the PROG button, and it is used by to put the PIC into bootloader mode when uploading new firmware. When it's not doing that it's attached to pin D17 with a 470K pulldown resistor, so when you press the PROG button, D17 goes from LOW to HIGH. The PROG pushbutton is a great way to get user acknowledgement of a stimulus (for example) into the data stream. You will likely want to note the rising edge (pushed state) of the button press, so that's the example code that we'll work with.</p>
+<pre><code class="hljs">int pushButton = 17;        // the button is on pin D17
+int pushButtonValue;        // used to hold the latest button reading
+int lastPushButtonValue;    // used to remember the last button state
+boolean addAuxToSD = false; // use this to write auxiliary data to SD if you like
+boolean state = HIGH;       // used to toggle the on-board LED
+</code></pre>
+<p>First thing is to establish the variables we need to read the pushbutton switch, and a flag to let the rest of the program know we got new data. The OpenBCI library already has a variable array for auxiliary data, called auxData, which we will use for logging. I've also added a flag for writing data to an SD card (if you like that kind of thing) and a boolean to toggle the on-board blue LED for user feedback, which is always nice.</p>
+<p>In the setup function, we set the pin direction and prime the button variables. The startFromScratch() function resets the board peripheral devices and does some general housekeeping, along with making initial serial contact with any controlling program. the useAccel and useAux variables are inside the OpenBCI_32_Daisy library (hence the <strong>OBCI.</strong>) and it's important to decide and select which kind of data you want to log. It is possible to do both, but you will need to manually operate the useAux or useAcel variables (tutorial on that coming sooooon).</p>
+<pre><code class="hljs">void setup(){
+    // stuff here...
+    pinMode(pushButton, INPUT);     // set the button pin direction
+    pushButtonValue = lastPushButtonValue = digitalRead(pushButton); // seed
+    startFromScratch();     // initialize OpenBCI, read device IDS
+    // you can set EITHER useAccel or useAux to true
+    // if you want both, you MUST set and clear one of the variables every sample
+    OBCI.useAccel = false;  // option to add/remove accelerometer data to stream
+    OBCI.useAux = true;     // option to add/remove auxiliary data to stream
+    // more stuff...
+}
+</code></pre>
+<p>Then, in the loop, we want to check for the rising edge of the button press, make note of it in the auxData array, and set the write-to-SD flag (if you like). Finally, we want to get the button press event into the data stream. (Reference the <a href="http://docs.openbci.com/Hardware/03-Cyton_Data_Format">OpenBCI Data Format Doc</a> for data packet anatomy) There are 6 bytes available in each data packet, and the default format is to read them as three 16bit integers (aka 'words' or 'shorts'). You can decide to add your flags into the auxData array any way you choose. In this example, we are setting each short to the value 0x6620. That's because our <a href="https://github.com/OpenBCI/OpenBCI_Processing">OpenBCI GUI</a> converts these variables to Gs (the GUI is expecting accelerometer data) and 0x6620 converts to PI (3.14). Our sample rate of 250SPS gives us a 4mS resolution on external trigger events like the rising edge of the PROG button press.</p>
+<pre><code class="hljs">pushButtonValue = digitalRead(pushButton);    // feel the PROG button
+if (pushButtonValue != lastPushButtonValue){  // if it's changed,
+        if (pushButtonValue == HIGH){    // if it's gone from LOW to HIGH
+            // 0x6220 converts to PI in GUI
+            OBCI.auxData[0] = OBCI.auxData[1] = OBCI.auxData[2] = 0x6220;  
+            addAuxToSD = true;       // add Aux Data to the SD card if it's there
+            state = !state;     // toggle the state variable
+            digitalWrite(LED,state);    // toggle the LED for user useability
+        }
+        lastPushButtonValue = pushButtonValue; // keep track of the changes!
+}
+</code></pre>
+<p>You can do the button feeling at any point in the loop() function. In our sample code linked above, I'm putting it outside of the if(is-running) conditional so that I can see the LED toggle even when the board is not streaming data. That's a nice way to know that you've got everything set up and working before starting a data logging session.</p>
+<p>Here's an example of what the data looks like after it's been logged by our GUI.</p>
+<pre><code class="hljs">217, -18.08, -23.04, -21.59, -29.86, -23.76, -19.65, -28.79, -19.47, 0.00, 0.00, 0.00
+218, -18.17, -22.82, -21.59, -29.93, -23.85, -19.65, -28.72, -19.16, 0.00, 0.00, 0.00
+219, -17.97, -23.04, -21.39, -29.97, -23.92, -19.56, -28.74, -19.24, 0.00, 0.00, 0.00
+220, -17.99, -23.07, -21.61, -30.00, -23.72, -19.71, -28.52, -19.16, 0.00, 0.00, 0.00
+221, -17.90, -23.04, -21.48, -30.09, -23.85, -19.54, -28.43, -19.18, 3.14, 3.14, 3.14
+222, -17.90, -22.96, -21.48, -30.20, -23.72, -19.38, -28.57, -18.95, 0.00, 0.00, 0.00
+223, -17.93, -22.89, -21.26, -29.97, -23.96, -19.65, -28.54, -18.95, 0.00, 0.00, 0.00
+</code></pre>
+<p>And here's an example of what the data looks like after it's been logged to the SD card.</p>
+<pre><code class="hljs">D9,FFFCD7,FFFBF9,FFFC3A,FFFAC8,FFFBD9,FFFC91,FFFAF8,FFFC99
+DA,FFFCD3,FFFC03,FFFC3A,FFFAC5,FFFBD5,FFFC91,FFFAFB,FFFCA7
+DB,FFFCDC,FFFBF9,FFFC43,FFFAC3,FFFBD2,FFFC95,FFFAFA,FFFCA3
+DC,FFFCDB,FFFBF8,FFFC39,FFFAC2,FFFBDB,FFFC8E,FFFB04,FFFCA7
+DD,FFFCDF,FFFBF9,FFFC3F,FFFABE,FFFBD5,FFFC96,FFFB08,FFFCA6,6220,6220,6220
+DE,FFFCDF,FFFBFD,FFFC3F,FFFAB9,FFFBDB,FFFC9D,FFFB02,FFFCB0
+DF,FFFCDE,FFFC00,FFFC49,FFFAC3,FFFBD0,FFFC91,FFFB03,FFFCB0
+</code></pre>
+<p>##External Triggering The Harder Way (Firmware 1.x.x)
+Sometimes a situation may arise where you need to interface OpenBCI with an existing system, for example an audio or visual event-related potential (ERP). In such a case, it is most desirable to have the onset of the signal tightly bound, temporally, with the EEG data. It is possible to interface the OpenBCI 32bit Board with the external signal generating system using a few low-cost components.
+Our goal with the OpenBCI board is to make biosensing safe and fun. The biggest part of the safety part is making sure that you can't plug yourself accidentally into the mains electrical supply (yikes!). If you are interfacing an external trigger that is <strong>NOT</strong> operating under a battery supply, we recommend thinking twice about incorporating it into your system/protocol. If you have thought through it twice, here's how we do it when we need to.</p>
+<p>###Optoisolation</p>
+<p><img src="../assets/images/ExternalTriggerCNY17.jpg" alt="Optoisolator Schematic">
+<img src="../assets/images/CNY17_Breadboard.jpg" alt="Breadboard CNY17"></p>
+<p>The simplest trick is to isolate the OpenBCI circuit from the trigger signal generating circuit. For this purpose, we picked an Optoisolator with 5000 Volts isolation between the input and the output. <a href="http://www.mouser.ee/ProductDetail/Vishay-Semiconductors/CNY17F-2X006/?qs=sGAEpiMZZMteimceiIVCB7Uit3aMEvQQFLjPtOr%2f870%3d">CNY17</a> family from Vishay is a great example of a low-cost high isolation optoisolator. It's usually available, and costs under a dollar (USD) in singles. In the circuit to the right, when an external trigger of 3.3V to 5V is applied to the Anode of the input (pin 1), the output (pin 5) will go from HIGH to LOW.</p>
+<pre><code class="hljs">int triggerPin = 18;        // the CNY17 Collector is on pin 18
+int triggerValue;       // used to hold the latest trigger reading
+int lastTriggerValue;   // used to remember the latest trigger state
+boolean addAuxToSD;        // option to add the aux data to the SD card
+</code></pre>
+<p>The code to read this trigger input is quite similar to the previous button code. In this case, we need to use a different pin (pin 18) and watch for the <strong>falling</strong> edge of the trigger.</p>
+<pre><code class="hljs">void setup(){
+    // stuff here...
+    pinMode(triggerPin, INPUT);     // set the button pin direction
+    triggerValue = lastTriggerValue = digitalRead(triggerPin); // seed
+    startFromScratch();     // initialize OpenBCI, read device IDS
+    // you can set EITHER useAccel or useAux to true
+    // if you want both, you MUST set and clear one of the variables every sample
+    OBCI.useAccel = false;  // option to add/remove accelerometer data to stream
+    OBCI.useAux = true;     // option to add/remove auxiliary data to stream
+    // more stuff...
+}
+
+void loop(){
+// do stuff
+triggerValue = digitalRead(triggerPin);    // feel the trigger pin
+    if (triggerValue != lastTriggerValue){  // if it's changed,
+        if (triggerValue == LOW){    // if it's gone from HIGH to LOW
+            // 0x6220 converts to PI in GUI
+            OBCI.auxData[0] = OBCI.auxData[1] = OBCI.auxData[2] = 0x6220;
+            addAuxToSD = true;           // add Aux Data to the SD card if it's there
+            state = !state;     // toggle the state variable
+            digitalWrite(LED,state);    // toggle the LED for user useability
+    }
+    lastTriggerValue = triggerValue; // keep track of the changes
+    }
+
+    // do other stuff
+    }
+</code></pre>
+<p>Have fun, be safe, and, as always, we're <a href="http://openbci.com/index.php/forum/">here to help</a></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/25/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonRadios"><span class="arrow-prev">← </span><span>Cyton Radios Programming Tutorial</span></a><a class="docs-next button" href="/Documentation-website-OpenBCI/docs/02Cyton/CytonSDCard"><span class="function-name-prevnext">Using SD Card with OpenBCI</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/Documentation-website-OpenBCI/" class="nav-home"><img src="/Documentation-website-OpenBCI/img/favicon.ico" alt="OpenBCI Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/Documentation-website-OpenBCI/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/Documentation-website-OpenBCI/docs/en/doc2.html">Guides (or other categories)</a><a href="/Documentation-website-OpenBCI/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/Documentation-website-OpenBCI/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/Documentation-website-OpenBCI/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/Documentation-website-OpenBCI/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 OpenBCI</section></footer></div></body></html>
