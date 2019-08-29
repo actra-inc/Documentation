@@ -6,7 +6,7 @@
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://openbci.github.io/Documentation/blog"/>
     <subtitle>The best place to stay up-to-date with the latest OpenBCI Documentation news and events.</subtitle>
-    <logo>https://openbci.github.io/Documentation/img/favicon.ico</logo>
+    <logo>https://openbci.github.io/Documentation/img/favicon_large.ico</logo>
     <rights>Copyright © 2019 OpenBCI</rights>
     <entry>
         <title type="html"><![CDATA[Blog Title]]></title>
