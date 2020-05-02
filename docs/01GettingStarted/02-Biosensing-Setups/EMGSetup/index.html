@@ -83,12 +83,12 @@
 <p>In the image above, note how the positive and negative terminals (yellow and green) are connected to the top and bottom N1P pins. When you are running the GUI, data from N1P pins will be displayed on Channel 1 within the <a href="/docs/06Software/01-OpenBCISoftware/GUIWidgets#time-series">Time Series Widget</a>.</p>
 <p>After making these pin connections, connect the sticky electrodes (or the IDUN Dryode if you are using that) to the snap electrode cable <em>prior to applying the electrodes to the skin.</em></p>
 <p><strong>2. Electrode-Muscle Connection</strong></p>
-<p>Choose muscle groups that can be flexed and relaxed easily. Place one electrode at the base of the muscle, and the other electrode at the other end of the muscle. The order of these doesn’t matter, as long as they are both linked to the same channel number. Place the ground electrode on a bony part of the body with as few muscles as possible (e.g. elbow, kneecap).</p>
+<p>Choose muscle groups that can be flexed and relaxed easily. Place one electrode at the base of the muscle, and the other electrode at the opposite end of the muscle. The order of these doesn’t matter, as long as they are both linked to the same channel number. Place the ground electrode on a bony part of the body with as few muscles as possible (e.g. elbow, kneecap).</p>
 <p><img src="https://github.com/openbci-archive/Docs/blob/master/assets/images/EMG_Electrode_Placement.jpg?raw=true" width="50%"></p>
 <p><strong>3. Streaming EMG Data with the OpenBCI GUI</strong></p>
 <p>Once you have the GUI open, turn off any channels that you have not connected to muscle sensors. Then, go to hardware settings and turn off SRB2 for all of the channels that you are streaming data from.</p>
 <p><em>Note: This is because ordinarily SRB2 is the reference point from which potentials are measured, however we are now having muscles reference themselves, so we do not want it to look at this pin.</em></p>
-<p>When you are happy with your GUI Time Series and Hardware settings, press &quot;BEGIN DATA STREAM.&quot;</p>
+<p>When you are happy with your software and hardware settings, press &quot;BEGIN DATA STREAM.&quot;</p>
 <p>Here is an example of what your data stream should look like as you flex and relax your muscle:</p>
 <p><img src="https://media.giphy.com/media/VbVRPTNTb4QAuUiwyb/giphy.gif" alt="EMGGIF"></p>
 <p><strong>4. Using OpenBCI's EMG GUI Widget</strong></p>
@@ -105,13 +105,14 @@ Each circle and box represents a channel. The circle and box fill up as the ampl
 <p><em>for reference, &quot;bottom&quot; pins means the row of pins closer to the table when the board is laid flat.</em></p>
 <p>After making these pin connections, connect one sticky electrode (or the IDUN Dryode if you are using that) to each snap electrode cable <em>prior to applying the electrodes to the skin.</em></p>
 <p><strong>2. Electrode-Muscle Connection</strong></p>
-<p>Choose muscle groups that can be flexed and relaxed easily. Place one sticky electrode or (IDUN Dryode) at the base of the muscle, and the other electrode at the other end of the muscle. The order of these doesn’t matter, as long as they are both linked to the same channel number. Place the reference electrode on a bony part of the body with as few muscles as possible (e.g. elbow, kneecap).</p>
+<p>Choose muscle groups that can be flexed and relaxed easily. Place one sticky electrode or (IDUN Dryode) at the base of the muscle, and the other electrode at the opposite end of the muscle. The order of these doesn’t matter, as long as they are both linked to the same channel number. Place the reference electrode on a bony part of the body with as few muscles as possible (e.g. elbow, kneecap).</p>
 <p>Each muscle should have two electrodes - one connected to the top pin, the other to the bottom pin. You can connect up to four muscles to the analog input channels 1 through 4. Thus, nine cables, including the ground electrode in step B, are needed to get 4 channels of EMG data with the Ganglion Board.</p>
 <p><img src="https://github.com/openbci-archive/Docs/blob/master/assets/images/EMG_Electrode_Placement.jpg?raw=true" width="50%"></p>
 <p><strong>3. Streaming EMG Data with the OpenBCI GUI</strong></p>
 <p>Once you have the GUI open, turn off any channels that you have not connected to muscle sensors, toggling the number next to the channel, in the Time Series widget.</p>
-<p>When you are happy with your GUI Time Series and Hardware settings, press &quot;BEGIN DATA STREAM.&quot;</p>
-<p>Here is an example of what your data stream should look like as you flex and relax your muscle:</p>
+<p>When you are running the GUI, data from N1P pins will be displayed on Channel 1 within the <a href="/docs/06Software/01-OpenBCISoftware/GUIWidgets#time-series">Time Series Widget</a>.</p>
+<p>Once you are happy with your software and hardware settings, press &quot;BEGIN DATA STREAM.&quot;
+Here is an example of what your data stream should look like as you flex and relax your muscle:</p>
 <p><img src="https://media.giphy.com/media/VbVRPTNTb4QAuUiwyb/giphy.gif" alt="EMGGIF"></p>
 <p><strong>4. Using OpenBCI's Built-in EMG GUI Widget</strong></p>
 <p>The OpenBCI GUI also has a widget for visualizing EMG data. To view it, click on the drop down menu under “FFT Plot”, and select “EMG”
